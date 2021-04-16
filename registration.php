@@ -6,4 +6,4 @@
 
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/Magento/raww', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::THEME, 'frontend/AHT/raww', __DIR__);
