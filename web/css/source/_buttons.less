@@ -1,0 +1,68 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common =true) {
+    button {
+        .lib-css(font-family, @font-avenir-heavy);
+
+        &.primary {
+            .lib-button-primary();
+            .lib-css(border-radius, 3px);
+
+            &:active,
+            &:focus {
+                .lib-css(box-shadow, inset 0 2px 1px rgba(0, 0, 0, .12));
+            }
+        }
+    }
+
+    a {
+        .lib-css(cursor, pointer);
+
+        &.primary {
+            .lib-css(color, @color-white);
+            .lib-css(text-decoration, none);
+            .lib-css(background, @color-brown01);
+            .lib-css(border, none);
+            .lib-css(display, inline-block);
+            .lib-css(text-align, center);
+            .lib-css(float, left);
+            .lib-css(font-size, @font-size-15);
+            font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            .lib-css(padding, 7px 15px);
+            .lib-css(border-radius, 3px);
+            .lib-css(font-weight, bold);
+
+            &:hover {
+                .lib-css(text-decoration, none);
+                .lib-css(background-color, @color-brown02);
+            }
+        }
+
+        &.secondary {
+            .lib-css(text-decoration, none);
+            .lib-css(background, @color-white);
+            .lib-css(color, @color-brown01);
+            .lib-css(font-size, @font-size-15);
+            .lib-css(width, 110px);
+            .lib-css(height, 40px);
+            .lib-css(border, 2px solid @color-pink01);
+            .lib-css(display, inline-block);
+            .lib-css(text-align, center);
+            .lib-css(float, left);
+            .lib-css(line-height, 40px);
+            .lib-css(font-family, @font-avenir-heavy);
+
+            &:hover {
+                .lib-css(text-decoration, none);
+                .lib-css(background-color, @color-pink01);
+            }
+        }
+    }
+}
