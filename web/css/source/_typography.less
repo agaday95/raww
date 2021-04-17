@@ -9,6 +9,19 @@
 
 & when (@media-common = true) {
     .lib-font-face (
+        @family-name: 'Avenir-black',
+        @font-path: '@{baseDir}fonts/Avenir-Black',
+        @font-weight: 800,
+        @font-style: normal,
+    );
+
+    .lib-font-face (
+        @family-name: 'Avenir-roman',
+        @font-path: '@{baseDir}fonts/Avenir-Roman',
+        @font-style: normal,
+    );
+
+    .lib-font-face (
         @family-name: 'AvernirHeavy',
         @font-path: '@{baseDir}fonts/AvernirHeavy',
         @font-weight: 400,
@@ -69,6 +82,9 @@
      }
     p {
         font-weight: 400;
+        .lib-css(font-family, @font-avenir-roman);
+        .lib-css(font-size, 15px);
+        .lib-css(margin, 0 0 20px);
     }
     dl {
         margin-bottom: 2px;
