@@ -5,7 +5,7 @@
 
 //
 //  Luma theme overrides
-//  _____________________________________________
+//  _______________________________s______________
 
 //  Theme file should contain declarations (overrides) ONLY OF EXISTING variables
 //  Otherwise this theme won't be available for parent nesting
@@ -14,6 +14,12 @@
 //
 //  Typography
 //  ---------------------------------------------
+
+//  Sizes
+
+//Button custom theme
+@button__font-size: 15px;
+
 
 //  Fonts
 @icons__font-path: '@{baseDir}fonts/Luma-Icons';
@@ -124,17 +130,32 @@
 @button__font-weight: @font-weight__semibold;
 
 //  Default = secondary button
-@button__background: @color-gray-darken0;
-@button__border: 1px solid @border-color__base;
-@button__hover__color: @button__color;
-@button__hover__background: darken(@button__background, 5%);
-@button__active__background: @color-gray-darken1;
+@button__background: @color-pink02;
+@button__border: 2px solid @color-pink01;
+@button__color: @color-brown01;
 
-//  Primary button
+@button__hover__color: @color-brown01;
+@button__hover__background: @color-pink01;
+
+@button__active__background: @color-pink01;
+
+@button__shadow-active: false;
+@button__shadow: false;
+
+//  Primary button custom raww
+@button-primary__background: @color-brown01;
+@button-primary__border: 1px solid @color-brown01;
+@button-primary__font-size: @button__font-size;
+
 @button-primary__hover__color: @color-white;
-@button-primary__active__background: @link__hover__color;
-@button-primary__active__border: 1px solid @link__hover__color;
+@button-primary__hover__background: @color-brown02;
+@button-primary__hover__border: 1px solid @color-brown02;
+
+@button-primary__active__background: @color-brown01;
+@button-primary__active__border: 1px solid @color-brown01;
 @button-primary__active__color: @color-white;
+
+
 
 //  Button with icon
 @button-icon__line-height: @icon-font__line-height;
@@ -255,14 +276,14 @@
 //  ---------------------------------------------
 
 @breadcrumbs__container-margin: 0 0 15px;
-@breadcrumbs-icon__font-size: 10px;
+@breadcrumbs-icon__font-size: 13px;
 @breadcrumbs-icon__font-margin: 0 @indent__s;
 
 @breadcrumbs-current__color: @color-gray-middle5;
 @breadcrumbs-link__color: @link__color;
-@breadcrumbs-link__visited__color: @breadcrumbs-link__color;
-@breadcrumbs-link__hover__color: @breadcrumbs-link__color;
-@breadcrumbs-link__active__color: @breadcrumbs-link__color;
+@breadcrumbs-link__visited__color: @color-breadcrumbs01;
+@breadcrumbs-link__hover__color: @color-breadcrumbs01;
+@breadcrumbs-link__active__color: @color-breadcrumbs01;
 
 //
 //  Popups
