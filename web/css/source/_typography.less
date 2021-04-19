@@ -29,32 +29,11 @@
     );
 
     .lib-font-face (
-        @family-name: 'AvernirHeavy',
-        @font-path: '@{baseDir}fonts/AvernirHeavy',
-        @font-weight: 400,
-        @font-style: normal,
-    );
-
-    .lib-font-face (
-        @family-name: 'AvernirRoman',
-        @font-path: '@{baseDir}fonts/AvernirRoman',
-        @font-weight: 400,
-        @font-style: normal,
-    );
-
-    .lib-font-face (
         @family-name: 'AvernirBook',
         @font-path: '@{baseDir}fonts/AvernirBook',
         @font-weight: 400,
         @font-style: normal,
     );    
-
-    .lib-font-face (
-        @family-name: 'AvernirBlack',
-        @font-path: '@{baseDir}fonts/AvernirBlack',
-        @font-weight: 400,
-        @font-style: normal,
-    );
 
     .lib-font-face (
         @family-name: 'Helvetica',
@@ -83,10 +62,11 @@
     .items {
         .lib-list-reset-styles();
     }
-     h1, h2, h3, h4, h5, h6 {
-         .lib-css(text-transform, uppercase);
-         .lib-css(letter-spacing, 2px);
-     }
+
+    h5 {
+        .lib-css(text-transform, uppercase);
+    }
+
     p {
         font-weight: 400;
         .lib-css(font-family, @font-avenir-roman);
