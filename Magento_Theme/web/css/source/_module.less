@@ -157,6 +157,41 @@
         }
     }
 
+    .header.content {
+        max-width: 100%;
+        text-align: center;
+
+        .logo {
+            display: inline-block;
+            float: left;
+            width: auto;
+        }
+
+        .minicart-wrapper {
+            display: inline-block;
+            float: right;
+        }
+
+        .block-search {
+            display: inline-block;
+            float: none;
+        }
+
+        .header_right_icon {
+            display: inline-block;
+            float: right;
+
+            ul {
+                list-style: none;
+
+                li {
+                    display: inline-block;
+                    float: left;
+                }
+            }
+        }
+    }
+
     .header {
         &.content:extend(.abs-add-clearfix all) {
             padding-top: @indent__s;

@@ -25,5 +25,13 @@
 	        </block>
 	     </referenceContainer>
 
+ 	     <referenceContainer name="header-wrapper">
+	        <block class="Magento\Cms\Block\Block" name="header.right.icon" after="top.search">
+	            <arguments>
+	                <argument name="block_id" xsi:type="string">header_right_icon</argument>
+	            </arguments>
+	        </block>
+	     </referenceContainer>
+
     </body>
 </page>
