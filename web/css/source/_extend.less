@@ -1,14 +1,22 @@
- 
-& when (@media-common = true) {
-	body {
-        .lib-css(font-family, @font-avenir-roman);
-        .lib-css(font-size, 15px);
-        .lib-css(line-height, 24px);
-        .lib-css(color, @color-standard);
-    }
+ & when (@media-common =true) {
+     body {
+         .lib-css(font-family, @font-avenir-roman);
+         .lib-css(font-size, 15px);
+         .lib-css(line-height, 24px);
+         .lib-css(color, @color-standard);
+     }
 
-    a {
-		.lib-css(cursor, pointer);
-		.lib-css(font-family, @font-avenir-roman);
-    }
-}
+     a {
+         .lib-css(cursor, pointer);
+         .lib-css(font-family, @font-avenir-roman);
+     }
+     //--------icon breadcrums------------
+     .page-wrapper .breadcrumbs .item:not(:last-child):after {
+         font-size: 17px;
+         margin-left: 3px;
+         margin-right: 5px;
+         color: @color-d3;
+         content: '/';
+         margin-top: 3px;
+     }
+ }

@@ -14,6 +14,16 @@
 //
 //  Typography
 //  ---------------------------------------------
+& when (@media-common =true) {
+    .page-wrapper .breadcrumbs .item:not(:last-child):after {
+        font-size: 17px;
+        margin-left: 3px;
+        margin-right: 5px;
+        color: @color-d3;
+        content: '/';
+        margin-top: 3px;
+    }
+}
 
 //  Sizes
 
@@ -31,18 +41,18 @@
 
 //  Headings
 @h1__font-size: 32px;
-@h1__font-family: @font-avenirheavy;
+@h1__font-family: @font-avenir-heavy;
 @h2__font-size: 24px;
-@h2__font-family: @font-avenirheavy;	
+@h2__font-family: @font-avenir-heavy;	
 // @h3__font-weight: @font-weight__semibold;
 // @h3__margin-top: @indent__base;
 @h3__font-size: 20px;
-@h3__font-family: @font-avenirheavy;
+@h3__font-family: @font-avenir-heavy;
 @h4__font-size: 15px;
-@h4__font-family: @font-avenirheavy;
+@h4__font-family: @font-avenir-heavy;
 @h4__font-weight: 400;
 @h5__font-size: 14px;
-@h5__font-family: @font-avenirblack;
+@h5__font-family: @font-avenir-black;
 
 //  Links
 @link__color: @color-link-raww;
