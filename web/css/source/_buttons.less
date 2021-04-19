@@ -9,12 +9,12 @@
 
 & when (@media-common =true) {
     button {
+        .lib-css(border-radius, 3px);
         .lib-css(font-family, @font-avenir-heavy);
-
         &.primary {
-            .lib-button-primary();
             .lib-css(border-radius, 3px);
-
+            .lib-button-primary();
+            
             &:active,
             &:focus {
                 .lib-css(box-shadow, inset 0 2px 1px rgba(0, 0, 0, .12));
