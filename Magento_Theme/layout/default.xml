@@ -5,12 +5,25 @@
  * See COPYING.txt for license details.
  */
 -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
          <referenceBlock name="wish-list-link" remove="true" />  
- <referenceBlock name="register-link" remove="true" />
-  <referenceBlock name="header" remove="true"/> 
-  <referenceBlock name="advanced-search-link" remove="true"/>
-  <referenceBlock name="authorization-link" remove="true" /> 
+		 <referenceBlock name="register-link" remove="true" />
+		 <referenceBlock name="header" remove="true"/> 
+		 <referenceBlock name="advanced-search-link" remove="true"/>
+
+	     <referenceContainer name="header.panel">
+	        <block class="Magento\Cms\Block\Block" name="header.free.shipping" before="-">
+	            <arguments>
+	                <argument name="block_id" xsi:type="string">header_free_shipping</argument>
+	            </arguments>
+	        </block>
+	        <block class="Magento\Cms\Block\Block" name="header.about" after="header.free.shipping">
+	            <arguments>
+	                <argument name="block_id" xsi:type="string">header_about</argument>
+	            </arguments>
+	        </block>
+	     </referenceContainer>
+
     </body>
 </page>
