@@ -63,7 +63,7 @@
 
     input {
          // input checkbox
-         &[type='checkbox'] {
+        &[type='checkbox'] {
             .lib-css(display, none);
 
             &:checked+label:before {
@@ -141,6 +141,8 @@
             &:disabled+label:before {
                 .lib-css(background-color, #f4f4f4);
             }
+
+            
         }
         &[type="text"] {
             &:focus {
@@ -148,12 +150,15 @@
                 color: @color-31;
             }
         }
+        &[type='checkbox'],
+        &[type="radio"] {
+            & + label {
+                position: relative;
+                font-family: @font-avenir-roman;
+                color: @color-31;
+                font-size: 15px;
+            }
+        }
     }
-    .label-checkbox,
-    .label-radio {
-        position: relative;
-        font-family: @font-avenir-roman;
-        color: @color-31;
-        font-size: 15px;
-    }
+
 }
