@@ -14,16 +14,7 @@
 //
 //  Typography
 //  ---------------------------------------------
-& when (@media-common =true) {
-    .page-wrapper .breadcrumbs .item:not(:last-child):after {
-        font-size: 17px;
-        margin-left: 3px;
-        margin-right: 5px;
-        color: @color-d3;
-        content: '/';
-        margin-top: 3px;
-    }
-}
+
 
 //  Sizes
 
@@ -140,16 +131,16 @@
 @button__font-weight: @font-weight__semibold;
 
 //  Default = secondary button
-@button__background: @color-gray-darken0;
-@button__border: 1px solid @border-color__base;
-@button__hover__color: @button__color;
-@button__hover__background: darken(@button__background, 5%);
-@button__active__background: @color-gray-darken1;
+@button__background: @color-white;
+@button__border: 2px solid @color-pink01;
+@button__hover__color: @color-brown01;;
+@button__hover__background: @color-pink01;
+@button__active__background: @color-pink01;
 
 //  Primary button custom raww
 @button-primary__background: @color-brown01;
 @button-primary__border: 1px solid @color-brown01;
-@button-primary__font-size: @button__font-size;
+@button-primary__font-size: @font-size-15;
 @button-primary__font-family: @font-avenir-heavy;
 
 @button-primary__hover__color: @color-white;
