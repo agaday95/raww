@@ -102,6 +102,7 @@
 
     .header.panel {
         display: flex; //
+        max-width: 100%;
 
         .header-free-shipping {
             margin: 0 auto 0;
@@ -152,6 +153,41 @@
                     @_link-color-active: @header-panel__text-color,
                     @_link-text-decoration-active: underline
                     );
+                }
+            }
+        }
+    }
+
+    .header.content {
+        max-width: 100%;
+        text-align: center;
+
+        .logo {
+            display: inline-block;
+            float: left;
+            width: auto;
+        }
+
+        .minicart-wrapper {
+            display: inline-block;
+            float: right;
+        }
+
+        .block-search {
+            display: inline-block;
+            float: none;
+        }
+
+        .header_right_icon {
+            display: inline-block;
+            float: right;
+
+            ul {
+                list-style: none;
+
+                li {
+                    display: inline-block;
+                    float: left;
                 }
             }
         }
@@ -217,6 +253,32 @@
     .action-skip-wrapper {
         height: 0;
         position: relative;
+    }
+
+    //
+    // Header bottom
+    // 
+    
+    .header-bottom {
+
+        .header_content_bottom {
+
+            ul {
+                list-style: none;
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+
+                li {
+                    width: -webkit-fill-available;
+                    margin-bottom: 0;
+                    border-top: solid 1px #eee;
+                    border-right: solid 1px #eee;
+                    border-bottom: solid 1px #eee;
+                    cursor: pointer;
+                }
+            }
+        }
     }
 
     //
@@ -511,6 +573,10 @@
         height: 100%; // Stretch screen area for sticky footer
     }
 
+    .header.content {
+        max-width: 100%;
+    }
+
     .navigation ul {
         padding: 0 8px;
     }
@@ -522,6 +588,10 @@
         .panel.wrapper {
             border-bottom: 1px solid @secondary__color;
             .lib-css(background-color, @header-panel__background-color);
+        }
+
+        .header.panel {
+            max-width: 100%;
         }
 
         .header.panel:extend(.abs-add-clearfix-desktop all) {

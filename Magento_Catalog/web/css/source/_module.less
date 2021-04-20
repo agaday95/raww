@@ -115,13 +115,15 @@
         .product.photo .photo.image {
             &:extend(.abs-adaptive-images-centered);
         }
+
         .fotorama-item {
             .fotorama__wrap {
                 .fotorama__stage {
-                    height: 580px!important;
+                    height: 580px !important;
                 }
             }
         }
+
         .placeholder .photo.container {
             max-width: 100%;
         }
@@ -157,6 +159,7 @@
     .product.info.detailed {
         clear: both;
         margin-bottom: 30px;
+        width: 66%;
 
         .additional-attributes {
             width: auto;
@@ -475,6 +478,21 @@
     }
 
     //
+    //  Product fotorama 
+    //  -------------------------------------
+    .fotorama__nav__frame.fotorama__nav__frame--thumb {
+        margin-bottom: 20px;
+        margin-top: -3px;
+    }
+
+    .fotorama__nav__shaft .fotorama__thumb-border {
+        border-color: #eee;
+        background: transparent;
+        border-width: 1px;
+        border: none;
+    }
+
+    //
     //  Sidebar product view
     //  -----------------------------------------
 
@@ -731,7 +749,7 @@
         .product.media {
             width: 60%;
 
-            
+
         }
     }
 
