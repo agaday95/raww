@@ -13,12 +13,16 @@
 & when (@media-common =true) {
     .product-info-raww {
         .lib-data-tabs();
+        * {
+            box-sizing: unset
+        }
     }
 
-    .product.info.detailed{
-        width: 66%;
-        display: inline-block;
-
+    .product.info.detailed {
+        display: inline-block;  
+         * {
+            box-sizing: unset
+        }
         .product.data.items {
             .lib-data-tabs();
         }

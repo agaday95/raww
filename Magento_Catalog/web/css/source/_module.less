@@ -115,13 +115,9 @@
         .product.photo .photo.image {
             &:extend(.abs-adaptive-images-centered);
         }
-        .fotorama-item {
-            .fotorama__wrap {
-                .fotorama__stage {
-                    height: 580px!important;
-                }
-            }
-        }
+
+
+
         .placeholder .photo.container {
             max-width: 100%;
         }
@@ -157,6 +153,7 @@
     .product.info.detailed {
         clear: both;
         margin-bottom: 30px;
+        width: 66%;
 
         .additional-attributes {
             width: auto;
@@ -172,6 +169,45 @@
         padding-left: 113px;
         width: 40%;
         text-align: center;
+
+        // Afterpay amount
+        .afterpay-installments {
+            font-size: 13px;
+            color: @color-standard;
+
+            span.afterpay {
+                letter-spacing: 1px;
+            }
+            
+            .afterpay_instalments_logo {
+                background-image: url("@{baseDir}images/afterpay_logo.png");
+                background-size: 76px 19px;
+                vertical-align: middle;
+                display: inline-block;
+                margin-right: 5px;
+                height: 19px;
+                width: 76px;
+            }
+        }
+
+        .page-title span.base {
+            .lib-css(font-family, @font-avenir-roman);
+        }
+
+        .attr-new {
+            margin-top: 5px;
+
+            .raww-new {
+                span {
+                    background-color: @color-brown01;
+                    .lib-css(color, @color-white);
+                    .lib-css(font-family, @font-avenir-black);
+                    .lib-css(text-transform, uppercase);
+                    .lib-css(font-size, 12px);
+                    .lib-css(padding, 9px 12px 7px 13px);
+                }
+            }
+        }
 
         .product-info-price {
             .lib-css(color, @product-info-price);
@@ -297,6 +333,7 @@
         .product-options-bottom {
             .box-tocart {
                 margin-top: @form-field__vertical-indent;
+
             }
         }
     }
@@ -358,9 +395,9 @@
 
     .product-options-bottom .price-box,
     .product-info-price .price-box {
-        .lib-css(color, @product-info-price);
+        .lib-css(color, @color__price-brown);
         display: table-cell;
-        padding-bottom: @indent__s;
+        padding-bottom: 6px;
         vertical-align: top;
 
         .old-price {
@@ -404,6 +441,12 @@
 
     .box-tocart {
         &:extend(.abs-box-tocart all);
+
+        .fieldset {
+            &>.field.qty {
+                margin-right: 20px;
+            }
+        }
 
         .field.qty {}
 
@@ -472,6 +515,32 @@
 
     .ui-dialog-titlebar-close {
         .lib-button-as-link();
+    }
+
+    //
+    //  Product fotorama 
+    //  -------------------------------------
+    .product.media {
+        .fotorama-item {
+            .fotorama__wrap {
+                .fotorama__stage {
+                    height: 580px !important;
+                    padding-left: 57px;
+                }
+            }
+        }
+    }
+
+    .fotorama__nav__frame.fotorama__nav__frame--thumb {
+        margin-bottom: 22px;
+        margin-top: -3px;
+    }
+
+    .fotorama__nav__shaft .fotorama__thumb-border {
+        border-color: #eee;
+        background: transparent;
+        border-width: 1px;
+        border: none;
     }
 
     //
@@ -655,7 +724,8 @@
     .product-info-main {
         .page-title-wrapper {
             h1 {
-                .lib-css(margin-bottom, @product-h1-margin-bottom-desktop);
+                .lib-css(margin-bottom, 2px);
+                .lib-css(margin-top, 12px);
             }
         }
 
@@ -680,7 +750,6 @@
     .box-tocart {
         .action.tocart {
             margin-bottom: 0;
-            margin-right: 1%;
             width: 259px;
         }
     }
@@ -696,8 +765,9 @@
                 font-size: @font-size__xl;
 
                 .price {
-                    font-size: 36px;
-                    line-height: 36px;
+                    font-size: 28px;
+                    line-height: 28px;
+                    letter-spacing: 1px;
                 }
             }
 
@@ -731,7 +801,7 @@
         .product.media {
             width: 60%;
 
-            
+
         }
     }
 

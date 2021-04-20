@@ -49,7 +49,6 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     h1 {
-        .lib-css(font-size, @h1__font-size-desktop);
         .lib-css(margin-bottom, @h1__margin-bottom__desktop);
     }
 }
@@ -63,8 +62,13 @@
         .lib-list-reset-styles();
     }
 
+    h1, h2, h3 {
+        .lib-css(letter-spacing, -0.25px);
+    }
+
     h5 {
         .lib-css(text-transform, uppercase);
+        .lib-css(letter-spacing, 0.5px);
     }
 
     p {
@@ -73,10 +77,12 @@
         .lib-css(font-size, 15px);
         .lib-css(margin, 0 0 20px);
     }
+
     .breadcrumbs a {
         color: @color-gray20;
         text-decoration: none;
     }
+
     dl {
         margin-bottom: 2px;
     }
