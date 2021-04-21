@@ -153,7 +153,8 @@
     .product.info.detailed {
         clear: both;
         margin-bottom: 30px;
-        width: 66%;
+        margin-top: 20px;
+        width: 110%;
 
         a.data.switch {
             box-sizing: unset;
@@ -320,47 +321,23 @@
 
         }
     }
-}
 
-// Review product 
-fieldset.fieldset.review-fieldset {
-    legend.review-legend {
-        font-size: 18px;
-    }
+    // Review product 
+    fieldset.fieldset.review-fieldset {
+        legend.review-legend {
+            font-size: 18px;
+        }
 
-    border: none;
-    padding: 0;
-
-    &>.review-field-ratings {
         border: none;
         padding: 0;
-    }
-}
 
-//---------------Attributes Product ---------------
-// Afterpay amount
-.afterpay-installments {
-    font-size: 13px;
-    color: @color-standard;
-
-    span.afterpay {
-        letter-spacing: 1px;
+        &>.review-field-ratings {
+            border: none;
+            padding: 0;
+        }
     }
 
-    .afterpay_instalments_logo {
-        background-image: url("@{baseDir}images/afterpay_logo.png");
-        background-size: 78px 21px;
-        vertical-align: middle;
-        display: inline-block;
-        margin-left: 5px;
-        height: 22px;
-        width: 76px;
-        margin-bottom: 5px;
-    }
 
-    a.afterpay-modal-popup-trigger {
-        margin-left: 9px;
-    }
 
     .product-options-wrapper {
         .fieldset {
@@ -553,18 +530,31 @@ fieldset.fieldset.review-fieldset {
                 }
             }
         }
-    }
 
-    .fotorama__nav__frame.fotorama__nav__frame--thumb {
-        margin-bottom: 22px;
-        margin-top: -3px;
-    }
+        .fotorama__nav__frame.fotorama__nav__frame {
+            padding: 0;
 
-    .fotorama__nav__shaft .fotorama__thumb-border {
-        border-color: #eee;
-        background: transparent;
-        border-width: 1px;
-        border: none;
+            &--thumb {
+                margin-bottom: 20px;
+
+                &.fotorama__active {
+                    border: 1px solid @color-eee;
+                    width: 118px !important;
+                }
+            }
+        }
+
+        .fotorama__nav__shaft .fotorama__thumb-border {
+            border-color: #eee;
+            background: transparent;
+            border-width: 1px;
+            border: none;
+            margin-top: 0px;
+        }
+
+        .fotorama__nav.fotorama__nav--thumbs {
+            height: 580px !important;
+        }
     }
 
     //
@@ -695,45 +685,94 @@ fieldset.fieldset.review-fieldset {
             min-height: inherit;
         }
     }
-}
-// Attribute new
-.attr-new {
-    margin-top: 5px;
 
-    .raww-new {
-        span {
-            background-color: @color-brown01;
-            .lib-css(color, @color-white);
-            .lib-css(font-family, @font-avenir-black);
-            .lib-css(text-transform, uppercase);
-            .lib-css(font-size, 12px);
-            .lib-css(padding, 9px 12px 7px 13px);
+    //---------------Attributes Product ---------------
+    // Afterpay amount
+    .afterpay-installments {
+        font-size: 13px;
+        color: @color-standard;
+
+        span.afterpay {
+            letter-spacing: 1px;
+        }
+
+        .afterpay_instalments_logo {
+            background-image: url("@{baseDir}images/afterpay_logo.png");
+            background-size: 78px 21px;
+            vertical-align: middle;
+            display: inline-block;
+            margin-left: 5px;
+            height: 22px;
+            width: 76px;
+            margin-bottom: 5px;
+        }
+
+        a.afterpay-modal-popup-trigger {
+            margin-left: 9px;
         }
     }
-}
-// Afterpay amount
-.attr-smells{
-    .product-naturally-smells-like {
-        padding: 15px;
-        border-radius: 3px;
-        border: 1px solid @color-eee;
-        margin-top: 30px;
-        h3 {
-            border-bottom: 1px solid @color-eee;
+
+    // Attribute new
+    .attr-new {
+        margin-top: 5px;
+
+        .raww-new {
+            span {
+                background-color: @color-brown01;
+                .lib-css(color, @color-white);
+                .lib-css(font-family, @font-avenir-black);
+                .lib-css(text-transform, uppercase);
+                .lib-css(font-size, 12px);
+                .lib-css(padding, 9px 12px 7px 13px);
+            }
         }
-        .items-image ul {
-            display: inline-block;
-            padding: 0;
-            li {
+    }
+
+    // Attribute smells
+    .attr-smells {
+        .product-naturally-smells-like {
+            padding: 15px;
+            border-radius: 3px;
+            border: 1px solid @color-eee;
+            margin-top: 30px;
+
+            h3 {
+                border-bottom: 1px solid @color-eee;
+                letter-spacing: -0.5px;
+                margin: 0;
+                padding-top: 14px;
+                padding-bottom: 20px;
+            }
+
+            .items-image ul {
                 display: inline-block;
-                &:first-child {
-                    margin-left: 0
+                padding: 0;
+                margin-top: 18px;
+
+                li {
+                    display: inline-block;
+                    margin-left: 18px;
+
+                    &:first-child {
+                        margin-left: 0px;
+                        margin-right: 5px
+                    }
+
+                    h5 {
+                        text-transform: uppercase;
+                        font-size: 12px;
+                        margin: 5px 0;
+                        letter-spacing: -0.1px;
+                    }
                 }
-                margin-left: 30px;
             }
         }
     }
 }
+
+
+
+
 
 
 //
@@ -749,6 +788,30 @@ fieldset.fieldset.review-fieldset {
 
         .product.media {
             .lib-vendor-prefix-order(-1);
+        }
+    }
+    button.action.primary.tocart {
+        width: calc(~"100% - 120px");
+    }
+    // Product details tab mobile
+    .product.data.items {
+        width: 100%;
+        border: 1px solid @color-eee;
+        margin: 0;
+
+        &>.item.title>.switch {
+            border: none;
+        }
+
+        &>.item.content {
+            border-bottom: 1px solid @color-eee;
+        }
+
+        .data.item.title {
+            min-height: 50px;
+            border-bottom: 1px solid @color-eee;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
     }
 }
@@ -787,13 +850,13 @@ fieldset.fieldset.review-fieldset {
     .product-info-main {
         .page-title-wrapper {
             h1 {
-                .lib-css(margin-bottom, 2px);
+                .lib-css(margin-bottom, 3px);
                 .lib-css(margin-top, @indent__s);
             }
         }
 
         .product-add-form {
-            padding-top: 28px;
+            padding-top: 30px;
             position: relative;
 
             &:before {
@@ -813,7 +876,7 @@ fieldset.fieldset.review-fieldset {
     .box-tocart {
         .action.tocart {
             margin-bottom: 0;
-            width: 259px;
+            width: 260px;
         }
     }
 

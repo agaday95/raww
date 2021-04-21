@@ -9,11 +9,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <move element="attribute.new" destination="product.info.main" before="page.main.title" />
-        <!-- <referenceBlock name="product.info.sku" remove="true" /> -->
+        <move element="product.info.details" destination="product.info.media" after="catalog_product_gallery" />
+
         <referenceBlock name="product.info.stock.sku" remove="true"/>
         <referenceBlock name="catalog.compare.sidebar" remove="true"/>
         <referenceBlock name="wishlist_sidebar" remove="true" />
         <referenceBlock name="product.info.addto" remove="true" />
+        <referenceBlock name="product.info.overview" remove="true" />
 
         <referenceContainer name="product.info.main">
             <container name="attribute.new" htmlTag="div" htmlClass="attr-new" before="-">
