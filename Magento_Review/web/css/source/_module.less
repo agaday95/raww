@@ -41,7 +41,8 @@
         .lib-rating-vote();
 
         &:before {
-            .lib-rating-icons-content(@_icon-content: @icon-star-empty );
+            // .lib-rating-icons-content(@_icon-content: @icon-star-empty );
+            content: '';
         }
     }
 
@@ -122,7 +123,6 @@
         .fieldset &-field-ratings {
             >.label {
                 font-weight: @font-weight__semibold;
-                margin-bottom: @indent__s;
                 padding: 0;
             }
         }
@@ -130,19 +130,19 @@
         &-control-vote label:before,
         &-control-vote:before {
             font-size: 32px;
-            height: 32px;
-            letter-spacing: 10px;
+            height: 15px;
+            letter-spacing: -13px;
             line-height: 32px;
         }
 
         &-field-rating {
             .label {
                 font-weight: @font-weight__semibold;
+                display: none;
             }
 
             .control {
                 margin-bottom: 1.2 * @indent__xl;
-                margin-top: @indent__s;
             }
         }
 
@@ -276,6 +276,27 @@
         }
     }
 
+    .rating-summary {
+        display: inline-block;
+        vertical-align: middle;
+
+        .rating-result {
+            width: 95px;
+
+            &:before {
+                content: '';
+                top: -1px;
+                background: url("@{baseDir}images/bkg_rating.png") repeat left 2px bottom;
+            }
+
+            >span:before {
+                content: '';
+                top: -1px;
+                background: url("@{baseDir}images/bkg_rating.png") repeat left 2px top;
+            }
+        }
+    }
+
     .product-reviews-summary {
         margin-bottom: @indent__xs;
 
@@ -283,26 +304,7 @@
             margin: 0 auto;
         }
 
-        .rating-summary {
-            display: inline-block;
-            vertical-align: middle;
 
-            .rating-result {
-                width: 95px;
-
-                &:before {
-                    content: '';
-                    top: -1px;
-                    background: url("@{baseDir}images/bkg_rating.png") repeat left 2px bottom;
-                }
-
-                >span:before {
-                    content: '';
-                    top: -1px;
-                    background: url("@{baseDir}images/bkg_rating.png") repeat left 2px top;
-                }
-            }
-        }
 
         .reviews-actions {
             display: inline-block;
@@ -329,7 +331,7 @@
     .product-info-main,
     .customer-review {
         .rating-summary {
-            margin-right: 11px;
+            margin-right: @indent__s;
             margin-bottom: 5px;
         }
     }
