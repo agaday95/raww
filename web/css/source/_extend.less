@@ -4,15 +4,23 @@
          .lib-css(font-size, 15px);
          .lib-css(line-height, 24px);
          .lib-css(color, @color-standard);
-         
+
+         ul,
+         li {
+             list-style-type: none;
+         }
+
      }
+
      body * {
-        .lib-css(box-sizing, border-box);
+         .lib-css(box-sizing, border-box);
      }
+
      a {
          .lib-css(cursor, pointer);
          .lib-css(font-family, @font-avenir-roman);
      }
+
      //--------icon breadcrums------------
      .page-wrapper .breadcrumbs .item:not(:last-child):after {
          font-size: 17px;
