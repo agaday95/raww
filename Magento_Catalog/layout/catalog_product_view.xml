@@ -28,5 +28,26 @@
                 <block class="Magento\Catalog\Block\Product\View\Description" name="smells.attribute" template="Magento_Catalog::product/view/attr_smells.phtml" after="-" />
             </container>
         </referenceContainer>
+        <!-- Tabs product infor details -->
+        <referenceBlock name="product.info.details">
+            <block class="Magento\Catalog\Block\Product\View" name="raww-howto-tab" template="Magento_Catalog::product/view/tab_howto.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">HOW TO</argument>
+                     <argument name="sort_order" xsi:type="string">10</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Catalog\Block\Product\View" name="raww-ingredients-tab" template="Magento_Catalog::product/view/tab_ingredients.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">INGREDIENTS</argument>
+                    <argument name="sort_order" xsi:type="string">11</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Catalog\Block\Product\View" name="raww-faq-tab" template="Magento_Catalog::product/view/tab_faq.phtml" group="detailed_info">
+                <arguments>
+                    <argument translate="true" name="title" xsi:type="string">FAQ</argument>
+                    <argument name="sort_order" xsi:type="string">12</argument>
+                </arguments>
+            </block>
+         </referenceBlock>
     </body>
 </page>
