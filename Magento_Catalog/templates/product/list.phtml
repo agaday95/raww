@@ -99,6 +99,15 @@ $_helper = $block->getData('outputHelper');
                                                    /* @noEscape */ $postParams['data'][Action::PARAM_NAME_URL_ENCODED]
                                                     ?>">
                                             <?= $block->getBlockHtml('formkey') ?>
+                                            <div class="fieldset">
+                                            <div class="field qty">
+                                            <div class="control">
+                                                <span onclick="minus()" class="minus-btn qty-btn"></span>
+                                                <input type="number" name="qty" id="qty" min="0" value="1" title="Quantity" class="input-text qty" data-validate="{&quot;required-number&quot;:true,&quot;validate-item-quantity&quot;:{&quot;minAllowed&quot;:1,&quot;maxAllowed&quot;:10000}}">
+                                                <span onclick="plus()" class="plus-btn qty-btn"></span>
+                                            </div>
+                                            </div>
+
                                             <button type="submit"
                                                     title="<?= $escaper->escapeHtmlAttr(__('Add to Cart')) ?>"
                                                     class="action tocart primary">
@@ -120,11 +129,8 @@ $_helper = $block->getData('outputHelper');
                                         $position,
                                         'product-item-info_' . $_product->getId() . ' div.actions-primary'
                                     ) : '' ?>
-                                <div data-role="add-to-links" class="actions-secondary">
-                                    <?php if ($addToBlock = $block->getChildBlock('addto')):?>
-                                        <?= $addToBlock->setProduct($_product)->getChildHtml() ?>
-                                    <?php endif; ?>
-                                </div>
+                                <!-- delete compare -->
+
                                 <?= strpos($pos, $viewMode . '-secondary') ?
                                     /* @noEscape */ $secureRenderer->renderStyleAsTag(
                                         $position,
