@@ -205,6 +205,7 @@ $_item = null;
                                             <?= $block->getImage($_item, $image)->toHtml() ?>
                                         </a>
                                         <div class="product details product-item-details">
+
                                             <strong class="product name product-item-name"><a class="product-item-link" title="<?= $block->escapeHtmlAttr($_item->getName()) ?>" href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>">
                                                     <?= $block->escapeHtml($_item->getName()) ?></a>
                                             </strong>
@@ -223,32 +224,29 @@ $_item = null;
                                                     <div class="field choice related">
                                                         <input type="checkbox" class="checkbox related" id="related-checkbox<?= $block->escapeHtmlAttr($_item->getId()) ?>" name="related_products[]" value="<?= $block->escapeHtmlAttr($_item->getId()) ?>" />
                                                         <label class="label" for="related-checkbox<?= $block->escapeHtmlAttr($_item->getId())
-                                                                                                    ?>"><span><?= $block->escapeHtml(__('Add to Cart')) ?></span>
+                                                                                                    ?>"><span><?= $block->escapeHtml(__('Add to Bag')) ?></span>
                                                         </label>
                                                     </div>
                                                 <?php endif; ?>
                                             <?php endif; ?>
+                                            <!-- Call color swatch -->
+                                            <?php if ($_item->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE) : ?>
+
+                                            <?php $swatchBlock = $this->getLayout()->createBlock("Magento\Swatches\Block\Product\Renderer\Listing\Configurable")->setTemplate("Magento_Swatches::product/listing/renderer.phtml");
+                                                echo $swatchBlock->setProduct($_item)->toHtml();
+                                            endif; ?>
 
                                             <?php if ($showAddTo || $showCart) : ?>
                                                 <?php // phpcs:disable 
                                                 ?>
                                                 <div class="product actions product-item-actions">
                                                     <!-- Addqty product -->
-                                                    <div class="fieldset">
-                                                        <div class="field qty">
-                                                            <div class="control">
-                                                                <span onclick="minus()" class="minus-btn qty-btn"></span>
-                                                                <input type="number" name="qty" id="qty" min="0" value="<?= $block->getProductDefaultQty() * 1 ?>" title="<?= $block->escapeHtmlAttr(__('Quantity')) ?>" class="input-text qty" data-validate="<?= $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>" />
-                                                                <span onclick="plus()" class="plus-btn qty-btn"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                     <?php if ($showCart) : ?>
                                                         <div class="actions-primary">
                                                             <?php if ($_item->isSaleable()) : ?>
                                                                 <?php if (!$_item->getTypeInstance()->isPossibleBuyFromList($_item)) : ?>
-                                                                    <button class="action tocart primary" data-mage-init='{"redirectUrl": {"url": "<?= $block->escapeUrl($block->getAddToCartUrl($_item)) ?>"}}' type="button" title="<?= $block->escapeHtmlAttr(__('Add to Cart')) ?>">
-                                                                        <span><?= $block->escapeHtml(__('Add to Cart')) ?></span>
+                                                                    <button class="action tocart primary" data-mage-init='{"redirectUrl": {"url": "<?= $block->escapeUrl($block->getAddToCartUrl($_item)) ?>"}}' type="button" title="<?= $block->escapeHtmlAttr(__('Add to Bag')) ?>">
+                                                                        <span><?= $block->escapeHtml(__('Add to Bag')) ?></span>
                                                                     </button>
                                                                 <?php else : ?>
                                                                     <?php
@@ -260,13 +258,21 @@ $_item = null;
                                                                     );
                                                                     $value = $postArray['data'][ActionInterface::PARAM_NAME_URL_ENCODED];
                                                                     ?>
-
                                                                     <form data-role="tocart-form" data-product-sku="<?= $block->escapeHtmlAttr($_item->getSku()) ?>" action="<?= $block->escapeUrl($block->getAddToCartUrl($_item)) ?>" method="post">
                                                                         <input type="hidden" name="product" value="<?= /* @noEscape */ (int)$_item->getEntityId() ?>">
                                                                         <input type="hidden" name="<?= /* @noEscape */ ActionInterface::PARAM_NAME_URL_ENCODED ?>" value="<?= /* @noEscape */ $value ?>">
                                                                         <?= $block->getBlockHtml('formkey') ?>
-                                                                        <button type="submit" title="<?= $block->escapeHtmlAttr(__('Add to Cart')) ?>" class="action tocart primary">
-                                                                            <span><?= $block->escapeHtml(__('Add to Cart')) ?></span>
+                                                                        <div class="fieldset">
+                                                                            <div class="field qty">
+                                                                                <div class="control">
+                                                                                    <span onclick="minus()" class="minus-btn qty-btn"></span>
+                                                                                    <input type="number" name="qty" id="qty" min="0" value="<?= $block->getProductDefaultQty() * 1 ?>" title="<?= $block->escapeHtmlAttr(__('Quantity')) ?>" class="input-text qty" data-validate="<?= $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>" />
+                                                                                    <span onclick="plus()" class="plus-btn qty-btn"></span>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <button type="submit" title="<?= $block->escapeHtmlAttr(__('Add to Bag')) ?>" class="action tocart primary">
+                                                                            <span><?= $block->escapeHtml(__('Add to Bag')) ?></span>
                                                                         </button>
                                                                     </form>
                                                                 <?php endif; ?>
@@ -316,4 +322,39 @@ $_item = null;
 
                 <?php endif; ?>
             <?php endif; ?>
-            
+            <script>
+                require([
+                    'jquery',
+                    'slick'
+                ], function($) {
+                    jQuery(document).ready(function() {
+                        jQuery(".product-items").not('.slick-initialized').slick({
+                            dots: false,
+                            infinite: false,
+                            prevArrow: false,
+                            nextArrow: false,
+                            speed: 300,
+                            rows: 1,
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            responsive: [{
+                                    breakpoint: 1000,
+                                    settings: {
+                                        slidesToShow: 2,
+                                        slidesToScroll: 2
+                                    }
+                                },
+                                {
+                                    breakpoint: 600,
+                                    settings: {
+                                        prevArrow: false,
+                                        nextArrow: false,
+                                        slidesToShow: 1,
+                                        slidesToScroll: 1
+                                    }
+                                },
+                            ]
+                        });
+                    });
+                });
+            </script>

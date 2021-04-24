@@ -230,7 +230,7 @@ define([
             selectorProductTile: '.product-item',
 
             // number of controls to show (false or zero = show all)
-            numberToShow: 2,
+            numberToShow: 5,
 
             // show only swatch controls
             onlySwatches: false,
