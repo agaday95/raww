@@ -116,8 +116,6 @@
             &:extend(.abs-adaptive-images-centered);
         }
 
-
-
         .placeholder .photo.container {
             max-width: 100%;
         }
@@ -304,11 +302,13 @@
         .swatch-option {
             margin: 0 0px 5px 2px;
         }
+
         .swatch-more {
             position: absolute;
             margin: 5px 0;
             text-decoration: none;
         }
+
         .swatch-attribute-options {
             margin: 7px 0;
 
@@ -694,7 +694,10 @@
         }
     }
 
-    //---------------Attributes Product ---------------
+    //
+    //  Attributes product detals
+    //  ---------------------------------------------
+
     // Afterpay amount
     .afterpay-installments {
         font-size: 13px;
@@ -875,6 +878,25 @@
 
         .block-title.title {
             text-align: center;
+            padding: 0 20px;
+
+            .related {
+                display: inline-block;
+                cursor: pointer;
+                text-indent: -99999px;
+                width: 24px;
+                height: 24px;
+
+                &.btn-prev {
+                    float: left;
+                    background: url("@{baseDir}images/prev-btn.png") no-repeat;
+                }
+
+                &.btn-next {
+                    float: right;
+                    background: url("@{baseDir}images/next-btn.png") no-repeat;
+                }
+            }
 
             strong {
                 letter-spacing: -1px;
@@ -927,28 +949,35 @@
                     }
                 }
             }
-           
-            .swatch-attribute{
-                .swatch-attribute-options {
-                    margin-bottom: 26px;
-                    padding-right: 67px;
-                    .swatch-option {
-                        margin: 0 2px 5px 0;
-                    }
-                    .swatch-more {
-                        position: absolute;
-                        line-height: 30px;
-                        text-decoration: none;
+
+            .swatch-opts {
+                min-height: 75px;
+
+                .swatch-attribute {
+                    .swatch-attribute-options {
+                        margin-bottom: 31px;
+                        display: flex;
+                        justify-content: center;
+
+                        .swatch-option {
+                            margin: 0 2px 5px 0;
+                        }
+
+                        .swatch-more {
+                            text-decoration: none;
+                            margin-top: 8px;
+                        }
                     }
                 }
-            } 
+            }
+
         }
 
         .block-actions {
             display: none;
         }
 
-        // remove hover
+        // Remove hover product default luma
         .products-grid .product-item-info:hover,
         .products-grid .product-item-info.active {
             z-index: 0;
@@ -958,7 +987,7 @@
             padding: 0;
         }
 
-        // slick 
+        // Slick 
         .products-related .slick-slider {
             margin-left: -23px;
 
@@ -984,7 +1013,7 @@
             }
         }
 
-        // End product related slick 
+        // End product related 
     }
 }
 
@@ -1536,8 +1565,6 @@
                 &:extend(.abs-visually-hidden all);
             }
         }
-
-
     }
 
     .related-available .product-item-name {

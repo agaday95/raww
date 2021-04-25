@@ -172,7 +172,10 @@ $_item = null;
                 <div class="block <?= $block->escapeHtmlAttr($class) ?>">
                 <?php endif; ?>
                 <div class="block-title title">
+                    <!-- custom prev next-->
+                    <div class="related btn-prev">prev</div>
                     <strong id="block-<?= $block->escapeHtmlAttr($class) ?>-heading" role="heading" aria-level="2"><?= $block->escapeHtml($title) ?></strong>
+                    <div class="related btn-next">next</div>
                 </div>
                 <div class="block-content content" aria-labelledby="block-<?= $block->escapeHtmlAttr($class) ?>-heading">
                     <?php if ($type == 'related' && $canItemsAddToCart) : ?>
@@ -233,7 +236,9 @@ $_item = null;
                                             <?php if ($_item->getTypeId() == \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE) : ?>
 
                                             <?php $swatchBlock = $this->getLayout()->createBlock("Magento\Swatches\Block\Product\Renderer\Listing\Configurable")->setTemplate("Magento_Swatches::product/listing/renderer.phtml");
-                                                echo $swatchBlock->setProduct($_item)->toHtml();
+                                                echo '<div class="swatch-opts">' . $swatchBlock->setProduct($_item)->toHtml() . '</div>';
+                                            else :
+                                                echo '<div class="swatch-opts"></div>';
                                             endif; ?>
 
                                             <?php if ($showAddTo || $showCart) : ?>
@@ -331,8 +336,8 @@ $_item = null;
                         jQuery(".product-items").not('.slick-initialized').slick({
                             dots: false,
                             infinite: false,
-                            prevArrow: false,
-                            nextArrow: false,
+                            prevArrow: $('.btn-prev'),
+                            nextArrow: $('.btn-next'),
                             speed: 300,
                             rows: 1,
                             slidesToShow: 3,
@@ -347,8 +352,6 @@ $_item = null;
                                 {
                                     breakpoint: 600,
                                     settings: {
-                                        prevArrow: false,
-                                        nextArrow: false,
                                         slidesToShow: 1,
                                         slidesToScroll: 1
                                     }
