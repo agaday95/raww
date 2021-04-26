@@ -632,31 +632,38 @@
                             margin-right: 0;
                         }
                     }
-
-                    ul {
-                        margin-bottom: 0;
-                        padding-top: 27px;
-
-                        li {
-                            display: inline-block;
-
-                            &:first-child {
-                                margin: 0 8px 0 -5px;
-
-                                em {
-                                  font-size: 24px;
-                                }
-                            }
-
-                            &:last-child {
-
-                                em {
-                                  font-size: 30px;
-                                }
-                            }
-                        }
-                    }
                 }
+
+                // ul {
+                //     margin-bottom: 0;
+                //     padding-top: 20px;
+
+                //     li {
+                //         display: inline-block;
+
+                //         &:first-child {
+
+                //             a {
+                //                 position: relative;
+                //             }
+
+                //             em {
+                //               font-size: 24px;
+                //             }
+                //         }
+
+                //         &:last-child {
+
+                //             a {
+                //                 position: relative;
+                //             }
+
+                //             em {
+                //               font-size: 30px;
+                //             }
+                //         }
+                //     }
+                // }
             }
 
             h2 {
@@ -1003,7 +1010,7 @@
         }
 
         .header.content {
-            padding-bottom: 9px;
+            padding-bottom: 4px;
 
             .nav-toggle {
                 top: 30px;
@@ -1170,10 +1177,10 @@
                             padding: 16px;
                         }
                     }
+                }
 
-                    ul {
-                        display: none;
-                    }
+                ul {
+                    display: none;
                 }
             }
         }
@@ -1240,6 +1247,14 @@
                     float: left;
                     margin-left: -7px;
                     margin-right: 15px;
+
+                    &:first-child a em{
+                        font-size: 24px;
+                    }
+
+                    &:last-child a em {
+                        font-size: 30px;
+                    }
                 }
             }
         }
@@ -1741,27 +1756,37 @@
                             border: none;
                         }
                     }
+                }
 
-                    ul {
-                        margin-bottom: 0;
-                        padding-top: 24px;
+                ul {
+                    margin-bottom: 0;
+                    padding-top: 24px;
 
-                        li {
-                            display: inline-block;
+                    li {
+                        display: inline-block;
 
-                            &:first-child {
-                                margin: 0 4px 0 0px;
+                        &:first-child {
 
-                                em {
-                                  font-size: 24px;
-                                }
+                            a {
+                                position: relative;
+                                top: -8px;
+                                left: -3px;
                             }
 
-                            &:last-child {
+                            em {
+                              font-size: 24px;
+                            }
+                        }
 
-                                em {
-                                  font-size: 30px;
-                                }
+                        &:last-child {
+
+                            a {
+                                position: relative;
+                                top: -5px;
+                            }
+
+                            em {
+                              font-size: 30px;
                             }
                         }
                     }
@@ -1857,6 +1882,7 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
 
     .header.content {
+        padding-bottom: 4px;
 
         .block-search {
             margin-top: 0;
@@ -2151,28 +2177,36 @@
                             border: none;
                         }
                     }
+                }
 
-                    ul {
-                        margin-bottom: 0;
-                        padding-top: 27px;
+                ul {
+                    margin-bottom: 0;
+                    padding-top: 20px;
 
-                        li {
-                            display: inline-block;
-                            float: left;
+                    li {
+                        display: inline-block;
 
-                            &:first-child {
-                                margin: 0 8px 0 -5px;
+                        &:first-child {
 
-                                em {
-                                  font-size: 24px;
-                                }
+                            a {
+                                position: relative;
+                                top: -4px;
+                                left: -5px;
                             }
 
-                            &:last-child {
+                            em {
+                              font-size: 24px;
+                            }
+                        }
 
-                                em {
-                                  font-size: 30px;
-                                }
+                        &:last-child {
+
+                            a {
+                                top: 0;
+                            }
+
+                            em {
+                              font-size: 30px;
                             }
                         }
                     }
