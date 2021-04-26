@@ -97,7 +97,7 @@
                 @_font-family: @_tab-control-font-family,
                 @_font-weight: @_tab-control-font-weight,
                 @_font-style: @_tab-control-font-style,
-                @_line-height: @_tab-control-line-height
+                @_line-height: calc(@_tab-control-line-height + 10px),
             );
             .lib-link(
                 @_link-color: @_tab-control-color,
@@ -112,8 +112,9 @@
             .lib-css(background, @_tab-control-background-color);
             .lib-css(border, @_tab-content-border);
             border-bottom: none;
-            .lib-css(height, @_tab-control-height);
-            .lib-css(padding, 1px 23px 1px 22px);
+            .lib-css(height, calc(@_tab-control-height + 4px ));
+            .lib-css(padding, 1px 27px 1px 23px);
+            letter-spacing: 0.2px;
         }
 
         // &:not(.disabled) > .switch:focus,
@@ -135,14 +136,15 @@
         &.active > .switch,
         &.active > .switch:focus,
         &.active > .switch:hover {
-            .lib-css(padding-bottom, @_tab-control-padding-bottom + @_tab-control-border-width);
+            .lib-css(padding-bottom, @_tab-control-padding-bottom + @_tab-control-border-width + 1px);
         }
     }
 
     > .item.content {
         .lib-css(background, @_tab-content-background-color);
-        margin-top: @_tab-content-margin-top;
-        padding: 23px 28px 24px;
+        margin-top: 48px;
+        padding: 25px 28px 24px;
+        letter-spacing: -0.06px;
 
         ._lib-tab-content-border(
             @_tab-content-border-top-status: @_tab-content-border-top-status,

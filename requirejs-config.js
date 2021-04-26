@@ -1,7 +1,10 @@
 var config = {
-    map: {
-        '*': {
-            'input_quantity':'js/input_quantity'
-            }
+    paths: {
+        slick: 'js/slick',
+    },
+    shim: {
+        slick: {
+            deps: ['jquery']
         }
-    };
+    }
+};
