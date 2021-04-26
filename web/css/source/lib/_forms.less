@@ -273,7 +273,7 @@
     input[type="number"],
     input[type="datetime"],
     input[type="email"] {
-        .lib-form-element-input(@_type: input-text);
+        .lib-form-element-input(@_type: input-text, @_height: 40px,@_border-radius: 3px, @_border: 1px solid @color-eee);
     }
 
     input[type="number"] {
@@ -287,7 +287,8 @@
     }
 
     select {
-        .lib-form-element-input(@_type: select);
+        .lib-form-element-input(@_type: select, @_height: 40px,@_border-radius: 3px, @_border: 1px solid @color-eee);
+        .lib-vendor-prefix-appearance();
     }
 
     select[multiple] {
