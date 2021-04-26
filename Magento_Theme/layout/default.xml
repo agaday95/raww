@@ -9,15 +9,29 @@
     <body>
          <referenceBlock name="wish-list-link" remove="true" />  
 		 <referenceBlock name="register-link" remove="true" />
+		 <referenceBlock name="my-account-link" remove="true" />  
 		 <referenceBlock name="header" remove="true"/> 
 		 <referenceBlock name="advanced-search-link" remove="true"/>
+		 <referenceBlock name="footer_links" remove="true" />
+		 <referenceBlock name="copyright" remove="true"/>
+
+		 <!-- <move element="navigation.sections" destination="header-wrapper" after="logo"/> -->
+
+        <referenceBlock name="form.subscribe" remove="true"/>
 
 	     <referenceContainer name="header.panel">
+	        <block class="Magento\Cms\Block\Block" name="header.top.mobile" before="-">
+	            <arguments>
+	                <argument name="block_id" xsi:type="string">header_top_mobile</argument>
+	            </arguments>
+	        </block>
+
 	        <block class="Magento\Cms\Block\Block" name="header.free.shipping" before="-">
 	            <arguments>
 	                <argument name="block_id" xsi:type="string">header_free_shipping</argument>
 	            </arguments>
 	        </block>
+
 	        <block class="Magento\Cms\Block\Block" name="header.about" after="header.free.shipping">
 	            <arguments>
 	                <argument name="block_id" xsi:type="string">header_about</argument>
@@ -33,13 +47,46 @@
 	        </block>
 	     </referenceContainer>
 
-	     <referenceContainer name="page.wrapper">
-	     	<block class="Magento\Cms\Block\Block" name="header.bottom" before="main.content">
+	     <referenceContainer name="page.top">
+	     	<block class="Magento\Cms\Block\Block" name="header.bottom" before="breadcrumbs">
 	            <arguments>
 	                <argument name="block_id" xsi:type="string">header_bottom</argument>
 	            </arguments>
 	        </block>
 	     </referenceContainer>
+
+ 	     <referenceContainer name="footer-container">
+	     	<block class="Magento\Cms\Block\Block" name="footer.top" before="-">
+	            <arguments>
+	                <argument name="block_id" xsi:type="string">footer_top</argument>
+	            </arguments>
+	        </block>
+
+	     	<block class="Magento\Cms\Block\Block" name="footer.center" after="footer.top">
+	            <arguments>
+	                <argument name="block_id" xsi:type="string">footer_center</argument>
+	            </arguments>
+	        </block>
+
+	     	<block class="Magento\Cms\Block\Block" name="footer.center.mobile" after="footer.center">
+	            <arguments>
+	                <argument name="block_id" xsi:type="string">footer_center_mobile</argument>
+	            </arguments>
+	        </block>
+
+	     	<block class="Magento\Cms\Block\Block" name="footer.bottom" after="-">
+	            <arguments>
+	                <argument name="block_id" xsi:type="string">footer_bottom</argument>
+	            </arguments>
+	        </block>
+	     </referenceContainer>
+
+
+
+	
+<!-- <move element="top.search" destination="page.top" after="catalog.topnav" /> -->
+
+
 
     </body>
 </page>

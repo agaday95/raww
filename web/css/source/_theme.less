@@ -15,7 +15,6 @@
 //  Typography
 //  ---------------------------------------------
 
-
 //  Sizes
 
 //Button custom theme
@@ -131,16 +130,16 @@
 @button__font-weight: @font-weight__semibold;
 
 //  Default = secondary button
-@button__background: @color-white;
-@button__border: 2px solid @color-pink01;
-@button__hover__color: @color-brown01;;
-@button__hover__background: @color-pink01;
-@button__active__background: @color-pink01;
+@button__background: @color-gray-darken0;
+@button__border: 1px solid @border-color__base;
+@button__hover__color: @button__color;
+@button__hover__background: darken(@button__background, 5%);
+@button__active__background: @color-gray-darken1;
 
 //  Primary button custom raww
 @button-primary__background: @color-brown01;
 @button-primary__border: 1px solid @color-brown01;
-@button-primary__font-size: @font-size-15;
+@button-primary__font-size: @button__font-size;
 @button-primary__font-family: @font-avenir-heavy;
 
 @button-primary__hover__color: @color-white;
@@ -194,13 +193,9 @@
 
 //  Select
 @select__background: @form-element-input__background url('../images/select-bg.svg') no-repeat 100% 45%;
-@select__border: 1px solid @color-eee;
-@select__height: 40px;
+@select__border: 1px solid @border-color__base;
+@select__height: 32px;
 @select__padding: 4px 25px @indent__xs @indent__s;
-
-// Input text
-@input-text__focus-border: 2px solid @color-eee;
-@input-text__focus-color: @color-gray60;
 
 //  Form fieldset
 @form-fieldset-legend__font-size: 18px;
@@ -277,7 +272,6 @@
 @breadcrumbs__container-margin: 0 0 15px;
 @breadcrumbs-icon__font-size: 10px;
 @breadcrumbs-icon__font-margin: 0 @indent__s;
-@breadcrumbs__font-size: 13px;
 
 @breadcrumbs-current__color: @color-gray-middle5;
 @breadcrumbs-link__color: @link__color;
