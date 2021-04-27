@@ -15,9 +15,10 @@
 		 <referenceBlock name="footer_links" remove="true" />
 		 <referenceBlock name="copyright" remove="true"/>
 
-		 <!-- <move element="navigation.sections" destination="header-wrapper" after="logo"/> -->
+		 <move element="form.subscribe" destination="footer.center" after="-"/>
 
-        <referenceBlock name="form.subscribe" remove="true"/>
+
+        <!-- <referenceBlock name="form.subscribe" remove="true"/> -->
 
 	     <referenceContainer name="header.panel">
 	        <block class="Magento\Cms\Block\Block" name="header.top.mobile" before="-">
@@ -80,13 +81,6 @@
 	            </arguments>
 	        </block>
 	     </referenceContainer>
-
-
-
-	
-<!-- <move element="top.search" destination="page.top" after="catalog.topnav" /> -->
-
-
 
     </body>
 </page>
