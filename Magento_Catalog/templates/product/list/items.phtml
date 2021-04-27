@@ -270,9 +270,9 @@ $_item = null;
                                                                         <div class="fieldset">
                                                                             <div class="field qty">
                                                                                 <div class="control">
-                                                                                    <span onclick="minus()" class="minus-btn qty-btn"></span>
-                                                                                    <input type="number" name="qty" id="qty" min="0" value="<?= $block->getProductDefaultQty() * 1 ?>" title="<?= $block->escapeHtmlAttr(__('Quantity')) ?>" class="input-text qty" data-validate="<?= $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>" />
-                                                                                    <span onclick="plus()" class="plus-btn qty-btn"></span>
+                                                                                    <span class="minus-btn qty-btn"></span>
+                                                                                    <input type="number" name="qty" id="qty" min="0" value="1" class="input-text qty" data-validate="<?= $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>" />
+                                                                                    <span class="plus-btn qty-btn"></span>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
