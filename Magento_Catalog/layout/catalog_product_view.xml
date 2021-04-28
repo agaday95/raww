@@ -17,6 +17,7 @@
         <referenceBlock name="wishlist_sidebar" remove="true" />
         <referenceBlock name="product.info.addto" remove="true" />
         <referenceBlock name="product.info.overview" remove="true" />
+        <referenceBlock name="product.attributes" remove="true" />
 
         <referenceContainer name="product.info.main">
             <container name="attribute.new" htmlTag="div" htmlClass="attr-new" before="-">
