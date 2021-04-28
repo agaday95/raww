@@ -1,0 +1,128 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+@widgets-indent__bottom: @indent__base;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .cms-index-index .page-main {
+        max-width: 100%;
+        padding: 0;
+
+        .home-block.home-block-5 {
+            order: 5;
+
+            .home-block5 {
+                background: @color-white url(../images/backgroundhome5.png) no-repeat center;
+
+                .block.newsletter {
+                    text-align: center;
+                    width: 100%;
+                    max-width: 100%;
+                    margin: auto;
+                    padding: 113px 0;
+
+                    .form.subscribe {
+                        width: 100%;
+                        display: inline-block;
+
+                        h2 {
+                            color: @color-white;
+                            font-size: 30px;
+                            letter-spacing: 0;
+                            margin-top: 10px;
+                            margin-left: -9px;
+                            margin-bottom: 7px;
+                        }
+
+                        .text {
+                            color: @color-white;
+                            max-width: 460px;
+                            font-size: 17px;
+                            letter-spacing: .5px;
+                            margin: 0 auto 27px;
+                            padding-left: 7px;
+                        }
+
+                        .content-bottom {
+                            display: inline-block;
+                            width: 100%;
+                            max-width: 572px;
+
+                            .field.newsletter {
+                                display: inline-block;
+                                float: left;
+                                width: 74%;
+
+                                input {
+                                    padding: 24px 20px;
+                                    margin: 0;
+                                    letter-spacing: 1px;
+                                    border-radius: 3px;
+                                }
+
+                                .control:before {
+                                    display: none;
+                                }
+                            }
+
+                            .actions {
+                                display: inline-block;
+                                float: right;
+                                width: auto;
+
+                                .action.subscribe {
+                                    padding: 16px 35px;
+                                    border-radius: 3px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .cms-index-index .page-main .home-block.home-block-5 .home-block5 .block.newsletter {
+        padding: 35px 10px 33px;
+
+        .form.subscribe {
+            h2 {
+                font-size: 24px;
+            }
+
+            .text {
+                font-size: 16px;
+            }
+
+            .content-bottom {
+
+                .field.newsletter {
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 10px;
+
+                    input {
+                        font-size: 14px;
+                    }
+                }
+
+                .actions {
+                    display: block;
+                    width: 100%;
+
+                    .action.subscribe {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
