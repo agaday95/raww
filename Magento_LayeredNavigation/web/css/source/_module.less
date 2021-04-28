@@ -8,27 +8,31 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+    .page-layout-1column.page-with-filter .column.main {
+        padding-top: 10px;
+        border-top: 1px solid @color-eee;
+    }
     .filter {
         &.block {
             margin-bottom: 0;
+            display: inline-block;
         }
 
         &-title {
             strong {
-                @_shadow: inset 0 1px 0 0 @color-white, inset 0 -1px 0 0 fade(@border-color__base, 30);
+                // @_shadow: inset 0 1px 0 0 @color-white, inset 0 -1px 0 0 fade(@border-color__base, 30);
 
-                .lib-css(background-color, @toolbar-element-background);
-                .lib-css(box-shadow, @_shadow);
-                border: 1px solid @border-color__base;
-                border-radius: 3px;
-                font-weight: 400;
-                left: 0;
-                line-height: 16px;
-                padding: 7px @indent__s;
-                position: absolute;
-                text-align: center;
-                top: 0;
-                z-index: 2;
+                // .lib-css(background-color, @toolbar-element-background);
+                // .lib-css(box-shadow, @_shadow);
+                // border: 1px solid @border-color__base;
+                // border-radius: 3px;
+                // font-weight: 400;
+                // left: 0;
+                // line-height: 16px;
+                // padding: 7px @indent__s;
+                // position: absolute;
+
+                .lib-button();
 
                 &[data-count]:after {
                     .lib-css(color, @color-white);
@@ -116,7 +120,7 @@
 
             &-title {
                 cursor: pointer;
-                font-weight: @font-weight__semibold;
+                font-weight: 800;
                 margin: 0;
                 overflow: hidden;
                 padding: @indent__s @indent__s + 30px 0 @indent__s;
@@ -124,12 +128,18 @@
                 text-transform: uppercase;
                 word-break: break-all;
                 z-index: 1;
+                font-family: @font-avenir-black;
+                font-size: 14px;
+                letter-spacing: .6px;
+                border-left: 1px solid @color-eee;
 
-                .lib-icon-font(
-                @_icon-font-content: @icon-down,
-                @_icon-font-size: 13px,
-                @_icon-font-position: after,
-                @_icon-font-display: block
+                .lib-icon-image(
+                    @_icon-image: '@{baseDir}images/icon-plus.png',
+                    @_icon-image-width: 13px,
+                    @_icon-image-height: 13px,
+                    @_icon-image-position-x: 50%,
+                    @_icon-image-position-y: 50%,
+                    @_icon-image-position: after,
                 );
 
                 &:after {
@@ -243,6 +253,7 @@
 
                 strong {
                     .lib-css(box-shadow, none);
+                    position: absolute;
                     background: none;
                     border: 0;
                     color: transparent;
@@ -384,13 +395,15 @@
             }
         }
     }
+
+
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
 
     .filter {
         &.block {
-            margin-bottom: @indent__xl;
+            margin-bottom: 25px;
         }
 
         &-title {
@@ -411,7 +424,7 @@
         &-options {
             background: transparent;
             clear: both;
-            display: block;
+            display: inline-block;
             overflow: initial;
             position: static;
         }
@@ -424,9 +437,9 @@
 
     .page-layout-1column {
         .toolbar-products {
-            position: absolute;
-            top: 0;
-            width: 100%;
+            float: right;
+            margin-bottom: 25px;
+            margin-top: 4px;
         }
 
         .products ~ .toolbar-products {
@@ -434,18 +447,21 @@
         }
 
         &.page-with-filter .column.main {
-            padding-top: 45px;
+            padding-top: 0;
             position: relative;
             z-index: 1;
         }
 
         .filter {
             &.block {
-                border-top: 1px solid @border-color__base;
+                display: inline-block;
+                float: left;
             }
 
             &-content {
-                margin-top: @indent__s;
+                margin-top: 12px;
+                display: inline-block;
+                float: left;
             }
 
             &-subtitle {
@@ -487,14 +503,21 @@
                             z-index: 4;
                         }
                     }
+
+                    &:first-child {
+                        .filter-options-title {
+                            padding-left: 0;
+                            border-left: unset;
+                        }
+                    }
                 }
 
                 &-title {
-                    padding: 0 @indent__base 0 0;
+                    padding: 0 22px 0 27px;
 
                     &:after {
-                        right: 2px;
-                        top: 3px;
+                        right: 0;
+                        top: 5px;
                         z-index: 3;
                     }
                 }

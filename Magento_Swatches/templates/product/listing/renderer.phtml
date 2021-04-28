@@ -10,15 +10,9 @@ $productId = $block->getProduct()->getId();
 /** @var \Magento\Swatches\ViewModel\Product\Renderer\Configurable $configurableViewModel */
 $configurableViewModel = $block->getConfigurableViewModel()
 ?>
-
 <div class="swatch-opt-<?= $block->escapeHtmlAttr($productId) ?>"
-     data-role="swatch-option-<?= $block->escapeHtmlAttr($productId) ?>">
-     <script>
-console.log("<?= $block->escapeJs($configurableViewModel->getShowSwatchTooltip()) ?>")
-console.log(<?= /* @noEscape */ $block->getPriceFormatJson(); ?>);
-</script>
-     </div>
-
+    data-role="swatch-option-<?= $block->escapeHtmlAttr($productId) ?>">
+</div>
 <script type="text/x-magento-init">
     {
         "[data-role=swatch-option-<?= $block->escapeJs($productId) ?>]": {
@@ -49,3 +43,4 @@ console.log(<?= /* @noEscape */ $block->getPriceFormatJson(); ?>);
         }
     }
 </script>
+
