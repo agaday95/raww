@@ -58,6 +58,11 @@
         .lib-css(box-shadow, none);
     }
 
+    select:not([disabled]):focus {
+        box-shadow: none;
+        border: 1px solid @color-eee;
+    }
+
     .custom-input {
         &>input {
 
