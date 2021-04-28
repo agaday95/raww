@@ -92,11 +92,14 @@
                 padding-left: 17px;
                 display: none;
             }
-
+            &.contain {
+                min-height: 80px;
+            }
             &-options {
                 margin-top: 3px;
                 margin-bottom: 10px;
-
+                .lib-vendor-prefix-display();
+                .lib-css(justify-content, center, 1);
                 &:focus {
                     box-shadow: none;
                 }
@@ -133,7 +136,7 @@
             cursor: pointer;
             float: none;
             height: 20px;
-            margin: 0 @indent__s @indent__xs 0;
+            margin: 0 2px @indent__xs 0;
             max-width: 100%;
             min-width: 30px;
             overflow: hidden;
@@ -351,6 +354,9 @@
             padding: 2px;
             position: static;
             z-index: 1;
+            text-decoration: none;
+            padding-bottom: 5px;
+            padding-top: 10px;
         }
 
         &-visual-tooltip-layered {
@@ -367,6 +373,10 @@
             left: -1000px;
             position: absolute;
             visibility: hidden;
+        }
+
+        &-contain {
+            height: 43px;
         }
     }
 
