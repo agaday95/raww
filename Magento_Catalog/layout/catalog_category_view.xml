@@ -10,13 +10,16 @@
     <body>
         <container name="category.view.group" htmlTag="div" htmlClass="category-view__group" before="-" />
         <container name="category.view.group.content" htmlTag="div" htmlClass="category-view__group--content" after="-" />
-        <referenceBlock name="breadcrumbs" remove="true"></referenceBlock>
+        <referenceBlock name="breadcrumbs" remove="true"/>
+        <referenceBlock name="product.info.review" remove="true" />
+
         <move element="category.view.container" destination="page.top" after="-" />
         <move element="category.view.group" destination="category.view.container" before="-" />
         <move element="category.view.group.content" destination="category.view.group"/>
         <move element="category.image" destination="category.view.group"/>
         <move element="page.main.title" destination="category.view.group.content"/>
         <move element="category.description" destination="category.view.group.content"/>
+
         
     </body>
 </page>
