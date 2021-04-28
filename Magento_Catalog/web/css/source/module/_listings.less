@@ -27,6 +27,11 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
+    body.page-with-filter.page-products {
+        .product-reviews-summary.short {
+            display: none;
+        }
+    }
     //  Product Lists
     .products {
         margin: @indent__l 0;
@@ -92,7 +97,7 @@
                             text-transform: uppercase;
                             display: inline-block;
                             margin: 0;
-
+                            z-index: 1;
                             position: absolute;
                             bottom: -6px;
                             left: 50%;
