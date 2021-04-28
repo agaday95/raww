@@ -430,7 +430,7 @@
         }
 
         .swatch-attribute-options {
-            margin: 7px 0;
+            margin: 7px 0 13px;
 
             .swatch-select {
                 background: @color-white url("@{baseDir}images/select-icon.png") no-repeat right 22px center;
@@ -526,7 +526,7 @@
     .product-info-price .price-box {
         .lib-css(color, @color__price-brown);
         display: table-cell;
-        padding-bottom: 6px;
+        padding-bottom: 10px;
         vertical-align: top;
 
         .old-price {
@@ -541,7 +541,7 @@
         .price-container {
             >span {
                 display: block;
-                margin-bottom: @indent__xs;
+                margin-bottom: 0;
 
                 &:last-child {
                     margin-bottom: 0;
@@ -907,7 +907,7 @@
     // Banner bottom product
     .page-wrapper>div.page-bottom {
         padding: 0;
-        margin: 7px 0 0 0;
+        margin: 6px 0 0 0;
         max-width: 100%;
         background: url("@{baseDir}images/banner-product-details.png");
         min-height: 420px;
@@ -970,6 +970,7 @@
         max-width: 1240px;
         margin: 60px auto 0;
         padding: 0;
+        width: 100%;
 
         .block-title.title {
             text-align: center;
@@ -1001,7 +1002,6 @@
 
         .product-item-details {
             text-align: center;
-            margin-top: 7px;
             font-size: 16px;
 
             .price-box {
@@ -1018,9 +1018,10 @@
 
             .product.actions.product-item-actions {
                 padding-left: 58px;
+                margin-top: -11px;
 
                 .fieldset>.field.qty {
-                    margin-right: 20px;
+                    margin-right: 19px;
                 }
 
                 .actions-primary {
@@ -1033,6 +1034,7 @@
 
                     button.action.tocart.primary {
                         min-width: 160px;
+                        margin: 0;
 
                         span {
                             font-size: 15px;
@@ -1194,13 +1196,13 @@
     .product-info-main {
         .page-title-wrapper {
             h1 {
-                .lib-css(margin-bottom, 3px);
-                .lib-css(margin-top, calc(@indent__s + 3px));
+                .lib-css(margin-bottom, 0);
+                .lib-css(margin-top, @indent__s + 3px);
             }
         }
 
         .product-add-form {
-            padding-top: 28px;
+            padding-top: 30px;
             position: relative;
 
             &:before {
@@ -1670,6 +1672,9 @@
         .product-item-details {
             position: relative;
             z-index: 1;
+            strong.product.name.product-item-name {
+                margin: 7px 0 -2px;
+            }
         }
 
         .field.choice {
