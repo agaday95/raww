@@ -15,10 +15,7 @@
 		 <referenceBlock name="footer_links" remove="true" />
 		 <referenceBlock name="copyright" remove="true"/>
 
-		 <move element="form.subscribe" destination="footer.center" after="-"/>
-
-
-        <!-- <referenceBlock name="form.subscribe" remove="true"/> -->
+        <referenceBlock name="form.subscribe" remove="true"/>
 
 	     <referenceContainer name="header.panel">
 	        <block class="Magento\Cms\Block\Block" name="header.top.mobile" before="-">

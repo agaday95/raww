@@ -16,7 +16,7 @@
                 <div class="field qty">
                     <div class="control">
                         <span onclick="minus()" class="minus-btn qty-btn"></span>
-                        <input type="number" name="qty" id="qty" min="0" value="<?= $block->getProductDefaultQty() * 1 ?>" title="<?= $block->escapeHtmlAttr(__('Quantity')) ?>" class="input-text qty" data-validate="<?= $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>" />
+                        <input type="number" name="qty" id="qty" min="1" value="<?= $block->getProductDefaultQty() * 1 ?>" title="<?= $block->escapeHtmlAttr(__('Quantity')) ?>" class="input-text qty" data-validate="<?= $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>" />
                         <span onclick="plus()" class="plus-btn qty-btn"></span>
                     </div>
                 </div>
@@ -35,9 +35,9 @@
             <?php if ($block->shouldRenderQuantity()) : ?>
                 <div class="field qty">
                     <div class="control">
-                        <span onclick="minus()" class="minus-btn qty-btn"></span>
+                        <span class="minus-btn qty-btn"></span>
                         <input type="number" name="qty" id="qty" min="0" value="<?= $block->getProductDefaultQty() * 1 ?>" title="<?= $block->escapeHtmlAttr(__('Quantity')) ?>" class="input-text qty" data-validate="<?= $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>" />
-                        <span onclick="plus()" class="plus-btn qty-btn"></span>
+                        <span class="plus-btn qty-btn"></span>
                     </div>
                 </div>
             <?php endif; ?>
@@ -54,22 +54,6 @@
     {
         "#product_addtocart_form": {
             "Magento_Catalog/js/validate-product": {}
-        }
-    }
-</script>
-<script>
-    var qty = 1;
-    var countEl = document.getElementById("qty");
-
-    function plus() {
-        qty++;
-        countEl.value = qty;
-    }
-
-    function minus() {
-        if (qty > 1) {
-            qty--;
-            countEl.value = qty;
         }
     }
 </script>
