@@ -43,8 +43,7 @@
     }
 
     a.action.primary {
-        padding: 11px 15px;
-        ;
+        padding: 6px 12px;
         .lib-link-as-button();
     }
 
@@ -67,8 +66,28 @@
                 @_button-border-active: 2px solid @color-pink01,
                 @_button-font-size: 15px,
                 @_button-line-height: 20px);
-            
 
+
+            .lib-css(text-decoration, none);
+        }
+
+        &.btn-banner {
+            .lib-button(@_button-color: @color-brown01,
+                @_button-background: @color-white,
+                @_button-border: none,
+
+                @_button-border-hover: none,
+                @_button-color-hover: @color-brown01,
+                @_button-background-hover: @color-white,
+
+                @_button-color-active: @color-brown01,
+                @_button-background-active: @color-white,
+                @_button-border-active: none,
+
+                @_button-font-size: 15px,
+                @_button-line-height: 20px,
+                @_button-padding: 15px 33px);
+            .lib-css(border-radius, 3px);
             .lib-css(text-decoration, none);
         }
     }
