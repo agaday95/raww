@@ -15,6 +15,7 @@
     .filter {
         &.block {
             margin-bottom: 0;
+            margin-left: 10px;
             display: inline-block;
         }
 
@@ -32,7 +33,9 @@
                 // padding: 7px @indent__s;
                 // position: absolute;
 
-                .lib-button();
+                .lib-button(
+                    @_button-padding: 10px 35px
+                );
 
                 &[data-count]:after {
                     .lib-css(color, @color-white);
@@ -215,6 +218,10 @@
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     body {
+        .page-main {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
         &.filter-active {
             .page-header {
                 display: none;
@@ -260,11 +267,12 @@
                     left: auto;
                     right: 3px;
                     top: 10px;
+                    padding: 10px 35px;
                     .lib-icon-font(
                     @icon-remove,
                     @_icon-font-color: @text__color__muted,
                     @_icon-font-size: 16px,
-                    @_icon-font-position: after
+                    @_icon-font-position: after,
                     );
                 }
             }
@@ -307,6 +315,10 @@
 
         &-options-content {
             padding: @indent__xs @indent__s;
+        }
+
+        &-title {
+            margin-top: 6px;
         }
     }
 
@@ -439,7 +451,7 @@
         .toolbar-products {
             float: right;
             margin-bottom: 25px;
-            margin-top: 4px;
+            margin-top: 15px;
         }
 
         .products ~ .toolbar-products {
@@ -459,7 +471,7 @@
             }
 
             &-content {
-                margin-top: 12px;
+                margin-top: 22px;
                 display: inline-block;
                 float: left;
             }

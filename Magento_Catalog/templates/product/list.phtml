@@ -71,7 +71,7 @@ $_helper = $block->getData('outputHelper');
                             if ($saleOrPreOrder) {
                                 $saleOrPreOrder = $saleOrPreOrder->getFrontend()->getValue($_product);
                                 $html = "";
-                                $class = "";
+                                $class = "hasNew";
                                 if(strtolower($saleOrPreOrder) == 'new') {
                                     $html = "<span>" . $saleOrPreOrder . "</span>";
                                     $class= "hasNew";

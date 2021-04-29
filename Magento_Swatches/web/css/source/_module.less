@@ -10,7 +10,7 @@
 @swatch-attribute-option__selected__color: #646464;
 
 @swatch-option__background: @color-gray94;
-@swatch-option__border: @border-width__base solid #dadada;
+@swatch-option__border: 1px solid @color-pink01;
 
 @swatch-option__hover__border: @border-width__base solid @color-white;
 @swatch-option__hover__color: @color-gray20;
@@ -251,7 +251,7 @@
                 max-height: 100%;
                 min-height: 20px;
                 min-width: 20px;
-                padding: @indent__xs;
+                padding: 1px 10px;
                 position: absolute;
                 text-align: center;
                 z-index: 999;
@@ -260,13 +260,12 @@
                 &,
                 &-layered {
                     .corner {
-                        top: 0px;
+                        top: 3px;
                         height: 8px;
                         left: 40%;
                         position: absolute;
 
-                        &:before,
-                        &:after {
+                        &:before {
                             border-style: solid;
                             content: '';
                             font-size: 1px;
@@ -276,17 +275,10 @@
                         }
 
                         &:before {
-                            border-color: transparent transparent @color-gray68 transparent;
-                            border-width: 0 8.5px 8px 8.5px;
+                            border-color: transparent transparent @color-pink01 transparent;
+                            border-width: 0 7.5px 9px 7.5px;
                             left: 0;
-                            top: -28px;
-                        }
-
-                        &:after {
-                            border-color: transparent transparent @color-white transparent;
-                            border-width: 0 7.5px 7px 7.5px;
-                            left: -16px;
-                            top: -27px;
+                            top: -30px;
                         }
                     }
 
@@ -316,6 +308,7 @@
                     min-height: 20px;
                     overflow: hidden;
                     text-align: center;
+                    font-size: 12px;
                 }
             }
 
@@ -376,7 +369,7 @@
         }
 
         &-contain {
-            height: 43px;
+            height: 42px;
         }
     }
 
