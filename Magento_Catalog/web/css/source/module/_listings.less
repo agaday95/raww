@@ -27,16 +27,14 @@
 //  _____________________________________________
 
 & when (@media-common = true) {
-<<<<<<< HEAD
-    .page-layout-1column.page-with-filter .columns {
-        margin-left: -10px;
-        margin-right: -10px;
-=======
+    .catalog-category-view.page-layout-1column.page-with-filter .columns {
+        margin-left: -20px;
+        margin-right: -20px;
+    }
     body.page-with-filter.page-products {
         .product-reviews-summary.short {
             display: none;
         }
->>>>>>> bc355f89d3e6cf5ee1502f0687846408d85b98fe
     }
     //  Product Lists
     .products {
@@ -83,9 +81,9 @@
                 text-align: center;
                 position: relative;
                 border: 1px solid transparent;
-
+                padding-bottom: 28px;
                 .product-item-details {
-                    margin-top: -4px;
+                    margin-top: 0px;
                     .hasNew {
                         position: relative;
                         height: 1px;
@@ -256,18 +254,6 @@
         }
     }
 
-    .column.main {
-        .product {
-            &-items {
-                // margin-left: 0;
-            }
-
-            &-item {
-                // padding-left: 0;
-            }
-        }
-    }
-
     .price-container {
         .price {
             .lib-font-size(16);
@@ -345,11 +331,6 @@
             table-layout: fixed;
             width: 100%;
             margin-left: 0;
-
-            // &-photo {
-            //     padding: 0 @indent__s @indent__s 0;
-            //     width: 30%;
-            // }
         }
     }
     
@@ -469,32 +450,28 @@
 
 // 768
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-    .page-products {
-        .products-grid {
-            .product-item {
-                // width: calc(~'(100% / 2) - 20px');
-                // &:nth-child(2n + 1) {
-                //     margin-left: 0;
-                // }
-            }
-        }
-    }
+
 }
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .catalog-category-view.page-layout-1column.page-with-filter .columns {
+        margin-left: -10px;
+        margin-right: -10px;
+    }
     .products {
         margin-top: 90px;
     }
+
     .page-products {
         .products-grid {
             .product-item {
-                width: calc(~'(100% / 3) - 20px');
+                width: 100% / 3;
                 &:nth-child(3n + 1) {
                     margin-left: 0;
                 }
 
                 &-info .product-item-details {
-                    margin-top: 5px;
+                    margin-top: -2px;
                 }
             }
         }

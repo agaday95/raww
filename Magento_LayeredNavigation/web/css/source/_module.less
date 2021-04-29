@@ -10,29 +10,18 @@
 & when (@media-common = true) {
     .page-layout-1column.page-with-filter .column.main {
         padding-top: 10px;
-        border-top: 1px solid @color-eee;
     }
+
     .filter {
         &.block {
-            margin-bottom: 0;
             margin-left: 10px;
+            margin-top: 15px;
             display: inline-block;
         }
 
         &-title {
+            margin-top: 15px;
             strong {
-                // @_shadow: inset 0 1px 0 0 @color-white, inset 0 -1px 0 0 fade(@border-color__base, 30);
-
-                // .lib-css(background-color, @toolbar-element-background);
-                // .lib-css(box-shadow, @_shadow);
-                // border: 1px solid @border-color__base;
-                // border-radius: 3px;
-                // font-weight: 400;
-                // left: 0;
-                // line-height: 16px;
-                // padding: 7px @indent__s;
-                // position: absolute;
-
                 .lib-button(
                     @_button-padding: 10px 35px
                 );
@@ -239,6 +228,39 @@
         }
     }
 
+    .page-with-filter {
+        .columns {
+            .sidebar-main {
+                .lib-vendor-prefix-order(0);
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .filter.block {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    .page-layout-1column {
+        .toolbar-products {
+            float: right;
+            margin-top: 15px;
+        }
+
+        .products ~ .toolbar-products {
+            position: static;
+        }
+
+        &.page-with-filter .column.main {
+            padding-top: 0;
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__l)  {
     .filter {
         &.active {
             position: relative;
@@ -303,6 +325,20 @@
         }
     }
 
+    .page-main {
+        padding-left: 10px !important;
+        padding-right: 10px;
+    }
+
+    .filter.block {
+        margin-top: 0;
+    }
+
+    .page-layout-1column .toolbar-products {
+        margin-right: 0;
+        margin-bottom: 17px;
+    }
+
     .filter {
         & &-subtitle {
             font-size: 20px;
@@ -318,7 +354,7 @@
         }
 
         &-title {
-            margin-top: 6px;
+            margin-top: 0px;
         }
     }
 
@@ -399,20 +435,9 @@
             margin-bottom: @indent__base;
         }
     }
-
-    .page-with-filter {
-        .columns {
-            .sidebar-main {
-                .lib-vendor-prefix-order(0);
-            }
-        }
-    }
-
-
 }
 
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
     .filter {
         &.block {
             margin-bottom: 25px;
@@ -447,160 +472,143 @@
         }
     }
 
-    .page-layout-1column {
-        .toolbar-products {
-            float: right;
-            margin-bottom: 25px;
-            margin-top: 15px;
+    .filter {
+        &.block {
+            display: inline-block;
+            float: left;
         }
 
-        .products ~ .toolbar-products {
-            position: static;
+        &-content {
+            margin-top: 22px;
+            display: inline-block;
+            float: left;
         }
 
-        &.page-with-filter .column.main {
-            padding-top: 0;
-            position: relative;
-            z-index: 1;
+        &-subtitle {
+            display: none;
         }
 
-        .filter {
-            &.block {
+        &-options {
+            &-item {
+                border: 0;
                 display: inline-block;
-                float: left;
+                margin-right: @indent__m;
+                position: relative;
+
+                &.active {
+                    z-index: 2;
+
+                    .filter-options-content {
+                        visibility: visible;
+                    }
+
+                    &:hover {
+                        z-index: 3;
+                    }
+
+                    &:after,
+                    &:before {
+                        .lib-arrow(up, 8px, @color-black);
+                        bottom: -1px;
+                        content: '';
+                        display: block;
+                        left: @indent__xs;
+                        position: absolute;
+                        z-index: 3;
+                    }
+
+                    &:after {
+                        .lib-css(border-bottom-color, @color-white);
+                        margin-top: 2px;
+                        z-index: 4;
+                    }
+                }
+
+                &:first-child {
+                    .filter-options-title {
+                        padding-left: 0;
+                        border-left: unset;
+                    }
+                }
+            }
+
+            &-title {
+                padding: 0 22px 0 27px;
+
+                &:after {
+                    right: 0;
+                    top: 5px;
+                    z-index: 3;
+                }
             }
 
             &-content {
-                margin-top: 22px;
-                display: inline-block;
-                float: left;
-            }
+                @_shadow: 0 3px 5px 0 rgba(50, 50, 50, .75);
 
-            &-subtitle {
-                display: none;
-            }
-
-            &-options {
-                &-item {
-                    border: 0;
-                    display: inline-block;
-                    margin-right: @indent__m;
-                    position: relative;
-
-                    &.active {
-                        z-index: 2;
-
-                        .filter-options-content {
-                            visibility: visible;
-                        }
-
-                        &:hover {
-                            z-index: 3;
-                        }
-
-                        &:after,
-                        &:before {
-                            .lib-arrow(up, 8px, @color-black);
-                            bottom: -1px;
-                            content: '';
-                            display: block;
-                            left: @indent__xs;
-                            position: absolute;
-                            z-index: 3;
-                        }
-
-                        &:after {
-                            .lib-css(border-bottom-color, @color-white);
-                            margin-top: 2px;
-                            z-index: 4;
-                        }
-                    }
-
-                    &:first-child {
-                        .filter-options-title {
-                            padding-left: 0;
-                            border-left: unset;
-                        }
-                    }
-                }
-
-                &-title {
-                    padding: 0 22px 0 27px;
-
-                    &:after {
-                        right: 0;
-                        top: 5px;
-                        z-index: 3;
-                    }
-                }
-
-                &-content {
-                    @_shadow: 0 3px 5px 0 rgba(50, 50, 50, .75);
-
-                    .lib-css(background, @color-white);
-                    .lib-css(box-shadow, @_shadow, 1);
-                    border: 1px solid @border-color__base;
-                    padding: @indent__xs 0;
-                    position: absolute;
-                    top: 100%;
-                    visibility: hidden;
-                    width: 180px;
-                    z-index: 2;
-
-                    .item {
-                        margin: 0;
-                        padding: @indent__xs;
-
-                        a {
-                            margin-left: 0;
-                        }
-
-                        &:hover {
-                            background-color: @color-gray91;
-                        }
-                    }
-                }
-            }
-
-            &-current {
-                display: inline;
-                line-height: 35px;
-
-                &-subtitle {
-                    .lib-css(color, @text__color__muted);
-                    display: inline;
-                    font-size: @font-size__base;
-                    font-weight: normal;
-                    padding: 0;
-
-                    &:after {
-                        content: ':';
-                    }
-                }
-
-                .item,
-                .items {
-                    display: inline;
-                }
+                .lib-css(background, @color-white);
+                .lib-css(box-shadow, @_shadow, 1);
+                border: 1px solid @border-color__base;
+                padding: @indent__xs 0;
+                position: absolute;
+                top: 100%;
+                visibility: hidden;
+                width: 180px;
+                z-index: 2;
 
                 .item {
-                    margin-right: @indent__m;
-                    white-space: nowrap;
-                }
+                    margin: 0;
+                    padding: @indent__xs;
 
-                .action.remove {
-                    line-height: normal;
+                    a {
+                        margin-left: 0;
+                    }
+
+                    &:hover {
+                        background-color: @color-gray91;
+                    }
+                }
+            }
+        }
+
+        &-current {
+            display: inline;
+            line-height: 35px;
+
+            &-subtitle {
+                .lib-css(color, @text__color__muted);
+                display: inline;
+                font-size: @font-size__base;
+                font-weight: normal;
+                padding: 0;
+
+                &:after {
+                    content: ':';
                 }
             }
 
-            &-actions {
+            .item,
+            .items {
                 display: inline;
-                white-space: nowrap;
+            }
 
-                & ~ .filter-options {
-                    margin-top: @indent__m;
-                }
+            .item {
+                margin-right: @indent__m;
+                white-space: nowrap;
+            }
+
+            .action.remove {
+                line-height: normal;
+            }
+        }
+
+        &-actions {
+            display: inline;
+            white-space: nowrap;
+
+            & ~ .filter-options {
+                margin-top: @indent__m;
             }
         }
     }
 }
+

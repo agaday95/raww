@@ -49,7 +49,7 @@
 @swatch-option-tooltip__border: @swatch-option__border;
 @swatch-option-tooltip__color: #949494;
 
-@swatch-option-tooltip-title__color: #282828;
+@swatch-option-tooltip-title__color: #31251c;
 
 @swatch-option-tooltip-layered__background: @swatch-option-tooltip__background;
 @swatch-option-tooltip-layered__border: @swatch-option__border;
@@ -188,7 +188,7 @@
                 &.selected,
                 &:not(.disabled):hover {
                     border: none;
-
+                    margin-bottom: 28px;
                     &:after {
                         content: '';
                         width: 30px;
@@ -309,6 +309,8 @@
                     overflow: hidden;
                     text-align: center;
                     font-size: 12px;
+                    font-family: @font-avenir-heavy;
+                    
                 }
             }
 
@@ -343,7 +345,7 @@
 
         &-more {
             display: inline-block;
-            margin: 2px 0;
+            margin: 2px 3px 2px 6px;
             padding: 2px;
             position: static;
             z-index: 1;

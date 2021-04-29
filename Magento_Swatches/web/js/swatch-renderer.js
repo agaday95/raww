@@ -138,7 +138,7 @@ define([
                             $title.text(label);
 
                             leftOpt = $this.offset().left;
-                            left = leftOpt + $this.width() / 2 - $element.width() / 2;
+                            left = leftOpt + $this.width() / 2 - $element.outerWidth() / 2;
                             $window = $(window);
 
                             // the numbers (5 and 5) is magick constants for offset from left or right page
@@ -152,17 +152,21 @@ define([
                             leftCorner = 0;
 
                             if ($element.width() < $this.width()) {
-                                leftCorner = $element.width() / 2 - 3;
+                                leftCorner = $element.width() / 2 + 2;
                             } else {
-                                leftCorner = (leftOpt > left ? leftOpt - left : left - leftOpt) + $this.width() / 2 - 6;
+                                leftCorner = (leftOpt > left ? leftOpt - left : left - leftOpt) + $this.width() / 2 - 3;
                             }
-
+                            console.log(leftCorner);
                             $corner.css({
                                 left: leftCorner
                             });
                             $element.css({
                                 left: left,
-                                top: $this.offset().top + $corner.height() + 18 + 25
+                                top:
+                                    $this.offset().top +
+                                    $element.height() +
+                                    $corner.height() +
+                                    18
                             }).show();
                             console.log($this.offset().bottom, $element.height(), $corner.height())
                         },
