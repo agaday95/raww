@@ -30,7 +30,7 @@
 
     .toolbar {
         &:extend(.abs-add-clearfix all);
-        margin-bottom: @indent__l;
+        margin-bottom: @indent__l + 8;
         text-align: center;
 
         select {
@@ -67,6 +67,9 @@
             display: flex;
             align-items: center;
             float: right;
+            margin-right: 10px;
+            margin-bottom: 19px;
+            
             .pages {
                 display: none;
 
@@ -90,10 +93,12 @@
         }
 
         &-options {
-            margin: 0 0 0 7px;
+            margin: 0 0 0 28px;
             width: auto;
             min-width: 150px;
-            margin-left: 28px;
+            background-position-x: 93%;
+            background-size: 27px;
+            padding-left: 15px;
         }
 
         &-action {
@@ -139,12 +144,16 @@
 //  Desktop
 //  _____________________________________________
 
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .toolbar-products {
+        margin-top: 7px;
+    }
+}
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
     .toolbar-products {
         margin-bottom: 0;
     }
 }
-
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .page-products {
         .columns {
@@ -240,6 +249,11 @@
     }
 }
 
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .toolbar-products {
+        margin-bottom: 38px;
+    }
+}
 //
 //  Mobile
 //  _____________________________________________
@@ -247,5 +261,15 @@
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
     .sorter-options {
         margin: 0 2px;
+    }
+
+    .toolbar-amount {
+        padding-right: 0;
+        position: absolute;
+        top: 54px;
+        left: 50%;
+        padding-right: 0;
+        border: unset;
+        .lib-css(transform, translateX(-50%));
     }
 }

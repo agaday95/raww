@@ -16,7 +16,6 @@
 //  _____________________________________________
 
 & when (@media-common =true) {
-
     .catalog-product-view {
 
         .page-wrapper>.breadcrumbs,
@@ -24,6 +23,12 @@
         .page-wrapper>.widget {
             margin-top: 12px;
         }
+
+        
+    }
+
+    .catalog-category-view .header-bottom-tablet .header_content_bottom ul {
+        margin-bottom: 0;
     }
 
     //  Category view
@@ -75,7 +80,8 @@
             .image {
                 display: block;
                 height: auto;
-                object-fit: cover;
+                min-height: 360px;
+                width: 100%;
             }
         }
 
@@ -101,7 +107,7 @@
 
         &-view {
             position: relative;
-
+            border-bottom: 1px solid @color-eee;
             &__group {
                 position: relative;
 
@@ -123,7 +129,7 @@
                     left: 50%;
                     width: 100%;
                     .lib-css(transform, translateX(-50%), 1);
-                    bottom: 13.5185%;
+                    bottom: 10%;
 
                     .page-title {
                         margin-bottom: 10px; 
@@ -135,7 +141,7 @@
 
     .category-cms {
         position: relative;
-        padding: 20px 0;
+        padding: 19px 0;
         .subcategory {
             box-sizing: border-box;
             margin-left: auto;
@@ -154,16 +160,20 @@
                 text-align: center;
                 max-width: 140px;
                 width: 100%;
-                margin: 24px 0;
+                margin: 14px 0;
 
                 &__content {
                     margin-top: 2px;
                     font-weight: 800;
                     text-align: center;
                     font-size: 14px;
-                    color: @color-brown01;
                     font-family: @font-avenir-black;
                     text-transform: uppercase;
+
+                    a {
+                        text-decoration: none;
+                        color: @color-brown01;
+                    }
                 }
             }
         }
@@ -1137,6 +1147,8 @@
         &-image .image {
             max-height: 360px;
             height: 100%;
+            width: auto;
+            object-fit: cover;
         }
     }
     .catalog-product-view {
@@ -1156,6 +1168,10 @@
     
     .product-info-main {
         padding-left: 0;
+    }
+
+    .category-view__group .page-title.page-title span.base {
+        letter-spacing: -2px;
     }
 }
 
@@ -1182,6 +1198,22 @@
         .additional-attributes-wrapper {
             &:extend(.abs-no-border-top all);
         }
+    }
+
+    .product-image-photo {
+        width: 97%;
+    }
+
+    .category-view__group .page-title.page-title span.base {
+        font-size: 70px;
+    }
+
+    .category-description p {
+        font-size: 16px;
+    }
+
+    .category-view__group--content {
+        min-height: 100px;
     }
 
 }
@@ -1596,7 +1628,6 @@
             width: calc(~"100% - 120px");
         }
     }
-
     .product.info.detailed {
         width: 100%;
     }
@@ -1604,18 +1635,23 @@
     
     .category-cms {
         .subcategory-item {
-            max-width: 100px;
-            &__icon {
-                img {
-                    width: 50px;
-                }
-            }
-
-            &__content {
-                .lib-font-size(12);
-            }
+            margin: 13px 0;
         }
     }
+
+    .category-view__group {
+        &.page-title {
+            margin-bottom: 20px;
+            &.page-title span.base {
+                letter-spacing: -2px;
+            }
+        }
+
+        &--content {
+            bottom: 10%;
+        }
+    }
+
 }
 
 //
@@ -1696,11 +1732,26 @@
 //  Desktop large
 //  _____________________________________________
 
+.media-width(@extremum, @break) when (@extremum ='min') and (@break = @screen__m) {
+    
+}
+
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {
+    .category-cms .subcategory-item {
+        margin: 25px 0;
+    }
+    .category-view__group--content {
+        bottom: 13.5185%;
+    }
+
     .box-tocart {
         .paypal:first-of-type {
             margin-top: 13px;
         }
+    }
+
+    .product-image-photo {
+        width: 100%;
     }
 
     .catalog-product-view {
