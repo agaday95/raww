@@ -245,7 +245,6 @@ $_item = null;
                                                 <?php // phpcs:disable 
                                                 ?>
                                                 <div class="product actions product-item-actions">
-                                                    <!-- Addqty product -->
                                                     <?php if ($showCart) : ?>
                                                         <div class="actions-primary">
                                                             <?php if ($_item->isSaleable()) : ?>
@@ -267,6 +266,7 @@ $_item = null;
                                                                         <input type="hidden" name="product" value="<?= /* @noEscape */ (int)$_item->getEntityId() ?>">
                                                                         <input type="hidden" name="<?= /* @noEscape */ ActionInterface::PARAM_NAME_URL_ENCODED ?>" value="<?= /* @noEscape */ $value ?>">
                                                                         <?= $block->getBlockHtml('formkey') ?>
+                                                                        <!-- Addqty product -->
                                                                         <div class="fieldset">
                                                                             <div class="field qty">
                                                                                 <div class="control">
@@ -327,6 +327,7 @@ $_item = null;
 
                 <?php endif; ?>
             <?php endif; ?>
+
             <script>
                 require([
                     'jquery',
@@ -343,17 +344,25 @@ $_item = null;
                             slidesToShow: 3,
                             slidesToScroll: 3,
                             responsive: [{
-                                    breakpoint: 1000,
+                                    breakpoint: 1280,
+                                    settings: {
+                                        slidesToShow: 3,
+                                        slidesToScroll: 3
+                                    }
+                                },
+                                {
+                                    breakpoint: 900,
                                     settings: {
                                         slidesToShow: 2,
                                         slidesToScroll: 2
                                     }
                                 },
                                 {
-                                    breakpoint: 600,
+                                    breakpoint: 450,
                                     settings: {
-                                        slidesToShow: 1,
-                                        slidesToScroll: 1
+
+                                        slidesToShow: 2,
+                                        slidesToScroll: 2
                                     }
                                 },
                             ]
