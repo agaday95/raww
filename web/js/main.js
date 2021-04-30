@@ -10,4 +10,3 @@ require(['jquery', 'jquery/ui'], function($) {
         jQuery(this).prev().val(qty + 1);
     });
 });
-  
