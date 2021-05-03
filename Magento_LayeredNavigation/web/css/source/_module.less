@@ -312,7 +312,7 @@
                     color: transparent;
                     left: auto;
                     right: 3px;
-                    top: 10px;
+                    top: 3px;
                     padding: 10px 35px;
                     .lib-icon-font(
                     @icon-remove,
@@ -508,17 +508,22 @@
             &-content {
                 display: inline-block;
                 float: left;
+                position: relative;
 
                 &:after {
+                    clear: both;
                     content: '';
                     display: inline-block;
                     width: 3px;
                     height: 30px;
                     background: white;
-                    position: relative;
-                    float: right;
+                    position: absolute;
                     top: 20px;
-                    right: 2px;
+                    right: 0;
+                }
+
+                & .filter-current ~ ::after {
+                    display: none;
                 }
             }
 
