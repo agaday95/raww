@@ -819,12 +819,21 @@
 //  Navigation
 //  _____________________________________________
 
+
+
+//
+//  Mobile
+//  _____________________________________________
+
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .customer-name,
     .customer-welcome + .authorization-link {
         display: none;
     }
-
+    .logo {
+        margin-bottom: 13px;
+        margin-top: 4px;
+    }
     .nav-sections .switcher-trigger strong:after {
         .lib-font-size(16);
         right: -25px;
@@ -876,21 +885,6 @@
             }
         }
     }
-}
-
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
-    .logo {
-        margin-bottom: 13px;
-        margin-top: 4px;
-    }
-}
-
-//
-//  Mobile
-//  _____________________________________________
-
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
-
     .cms-page-view .page-main {
         padding-top: 0;
         position: relative;
@@ -1942,48 +1936,52 @@
     }
 
     // cms-footer-center
-    body.cms-index-index .page-footer .footer-center {
-        margin-bottom: 47px;
+    body.cms-index-index .page-footer {
+        margin-top: -3px;
 
-        .col-product {
-            width: 26.6%;
-        }
-
-        .col-difference {
-            width: 26.6%
-        }
-
-        .col-customer {
-            width: 25.9%;
-
-            ul li:nth-child(6),
-            ul li:last-child {
-                display: none;
+        .footer-center {
+            margin-bottom: 47px;
+    
+            .col-product {
+                width: 26.6%;
             }
-        }
-
-        .col-newsletter {
-            order: 4;
-            background-color: @color-white;
-            width: 20.9%;
-            padding: 0;
-
-            .block.newsletter {
-                display: none;
+    
+            .col-difference {
+                width: 26.6%
             }
-
-            ul {
-                padding-top: 0;
-
+    
+            .col-customer {
+                width: 25.9%;
+    
+                ul li:nth-child(6),
+                ul li:last-child {
+                    display: none;
+                }
             }
-
-            ul li:first-child a {
-                top: 5px;
-            }
-
-            ul li:last-child a {
-                top: 9px;
-                left: -2px;
+    
+            .col-newsletter {
+                order: 4;
+                background-color: @color-white;
+                width: 20.9%;
+                padding: 0;
+    
+                .block.newsletter {
+                    display: none;
+                }
+    
+                ul {
+                    padding-top: 0;
+    
+                }
+    
+                ul li:first-child a {
+                    top: 5px;
+                }
+    
+                ul li:last-child a {
+                    top: 9px;
+                    left: -2px;
+                }
             }
         }
     }

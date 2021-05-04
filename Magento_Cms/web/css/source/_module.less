@@ -3,6 +3,10 @@
 //  * See COPYING.txt for license details.
 //  */
 
+//
+//  Variables
+//  _____________________________________________
+
 @widgets-indent__bottom: @indent__base;
 
 //
@@ -167,34 +171,32 @@
                         padding: 15px 15px 3px;
                         display: inline-block;
 
-                        ul {
-                            li {
+                        ul>li {
+                            display: inline-block;
+                            width: calc(138px);
+                            float: left;
+                            min-height: 170px;
+                            padding: 0 6px 0 11px;
+
+                            p {
+                                font-size: 14px;
+                                font-family: @font-avenir-black;
+                                text-transform: uppercase;
+                                line-height: 15px;
                                 display: inline-block;
-                                width: calc(138px);
                                 float: left;
-                                min-height: 170px;
-                                padding: 0 6px 0 11px;
+                                height: 35px;
+                                width: 100%;
+                                padding-top: 10px;
+                            }
 
-                                p {
-                                    font-size: 14px;
-                                    font-family: @font-avenir-black;
-                                    text-transform: uppercase;
-                                    line-height: 15px;
-                                    display: inline-block;
-                                    float: left;
-                                    height: 35px;
-                                    width: 100%;
-                                    padding-top: 10px;
-                                }
+                            &:nth-last-child(8n) {
+                                padding: 0;
+                            }
 
-                                &:nth-last-child(8n) {
-                                    padding: 0;
-                                }
-
-                                &:nth-last-child(8n + 1) {
-                                    padding: 0;
-                                    padding-left: 12px;
-                                }
+                            &:nth-last-child(8n + 1) {
+                                padding: 0;
+                                padding-left: 12px;
                             }
                         }
                     }
@@ -278,7 +280,7 @@
                                         margin: 14px 0 0;
                                     }
 
-                                    // Swatch
+                                    // Swatch attributes
                                     .swatch-attribute-options {
                                         .swatch-more {
                                             margin-top: 2px;
@@ -338,7 +340,7 @@
                 max-width: 1290px;
                 margin: 0 auto;
                 text-align: center;
-                padding: 0 15px;
+                padding: 0 15px 39px;
 
                 .title {
                     margin: 90px 0 25px;
@@ -370,6 +372,79 @@
                 }
             }
         }
+
+        &.home-block-5 {
+            order: 5;
+
+            .home-block5 {
+                background: @color-white url("@{baseDir}images/backgroundhome5.png") no-repeat center;
+
+                .block.newsletter {
+                    text-align: center;
+                    width: 100%;
+                    max-width: 100%;
+                    margin: auto;
+                    padding: 113px 0;
+
+                    .form.subscribe {
+                        width: 100%;
+                        display: inline-block;
+
+                        h2 {
+                            color: @color-white;
+                            font-size: 30px;
+                            letter-spacing: 0;
+                            margin-top: 6px;
+                            margin-left: -9px;
+                            margin-bottom: 7px;
+                        }
+
+                        .text {
+                            color: @color-white;
+                            max-width: 460px;
+                            font-size: 17px;
+                            letter-spacing: .5px;
+                            margin: 0 auto 27px;
+                            padding-left: 7px;
+                        }
+
+                        .content-bottom {
+                            display: inline-block;
+                            width: 100%;
+                            max-width: 572px;
+
+                            .field.newsletter {
+                                display: inline-block;
+                                float: left;
+                                width: 74%;
+
+                                input {
+                                    padding: 24px 20px;
+                                    margin: 0;
+                                    letter-spacing: 1px;
+                                    border-radius: 3px;
+                                }
+
+                                .control:before {
+                                    display: none;
+                                }
+                            }
+
+                            .actions {
+                                display: inline-block;
+                                float: right;
+                                width: auto;
+
+                                .action.subscribe {
+                                    padding: 16px 35px;
+                                    border-radius: 3px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -379,6 +454,11 @@
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__m) {
     .hide-on-desktop {
         display: none !important;
+    }
+    body.cms-home.cms-index-index {
+        .page-footer {
+            margin-top: -3px;
+        }
     }
 }
 
