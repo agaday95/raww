@@ -92,14 +92,17 @@
                 padding-left: 17px;
                 display: none;
             }
+
             &.contain {
                 min-height: 80px;
             }
+
             &-options {
                 margin-top: 3px;
                 margin-bottom: 10px;
                 .lib-vendor-prefix-display();
                 .lib-css(justify-content, center, 1);
+
                 &:focus {
                     box-shadow: none;
                 }
@@ -188,8 +191,8 @@
                 &.selected,
                 &:not(.disabled):hover {
                     border: none;
-                    margin-bottom: 28px;
                     .lib-css(transition, all 0.4s ease 0s);
+
                     &:after {
                         content: '';
                         width: 30px;
@@ -311,7 +314,7 @@
                     text-align: center;
                     font-size: 12px;
                     font-family: @font-avenir-heavy;
-                    
+
                 }
             }
 
@@ -382,5 +385,15 @@
         display: block;
         height: 0;
         visibility: hidden;
+    }
+
+    .catalog-category-view {
+
+        .swatch-option.image.selected,
+        .swatch-option.color.selected,
+        .swatch-option.image:not(.disabled):hover,
+        .swatch-option.color:not(.disabled):hover {
+            margin-bottom: 28px;
+        }
     }
 }
