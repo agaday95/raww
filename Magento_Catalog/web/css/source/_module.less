@@ -220,7 +220,6 @@
         height: 0;
         overflow: hidden;
         position: relative;
-        z-index: 1;
     }
 
     .product-image-photo {
@@ -859,6 +858,16 @@
         .raww-new {
             span {
                 background-color: @color-brown01;
+                .lib-css(color, @color-white);
+                .lib-css(font-family, @font-avenir-black);
+                .lib-css(text-transform, uppercase);
+                .lib-css(font-size, 12px);
+                .lib-css(padding, 9px 12px 7px 13px);
+            }
+        }
+        .raww-newshade {
+            span {
+                background-color: @color-pink03;
                 .lib-css(color, @color-white);
                 .lib-css(font-family, @font-avenir-black);
                 .lib-css(text-transform, uppercase);
@@ -1696,7 +1705,7 @@
             position: relative;
             z-index: 1;
             strong.product.name.product-item-name {
-                margin: 9px 0 -2px;
+                margin: 12px 0 -2px;
             }
         }
 
