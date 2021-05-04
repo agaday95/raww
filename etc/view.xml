@@ -52,7 +52,7 @@
                 <width>100</width>
                 <height>100</height>
             </image>
-            <image id="mini_cart_product_thumbnail" type="thumbnail">s
+            <image id="mini_cart_product_thumbnail" type="thumbnail">
                 <width>150</width>
                 <height>150</height>
             </image>
