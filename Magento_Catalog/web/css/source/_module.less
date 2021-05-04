@@ -19,7 +19,10 @@
             margin-top: 12px;
         }
     }
-
+    // .catalog-category-view .page-header {
+    //     margin-bottom: 0;
+    // }
+    
     .catalog-category-view .header-bottom-tablet .header_content_bottom ul {
         margin-bottom: 0;
     }
@@ -166,6 +169,10 @@
                     a {
                         text-decoration: none;
                         color: @color-brown01;
+
+                        &:hover {
+                            border-bottom: 1px solid @color-brown01;
+                        }
                     }
                 }
             }
@@ -1720,7 +1727,7 @@
 
 .media-width(@extremum, @break) when (@extremum ='min') and (@break =@screen__l) {
     .category-cms .subcategory-item {
-        margin: 25px 0;
+        margin: 23px 0;
     }
     .category-view__group--content {
         bottom: 13.5185%;
