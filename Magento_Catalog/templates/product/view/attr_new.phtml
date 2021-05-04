@@ -2,18 +2,25 @@
     $product = $block->getProduct();
     $p = $product->getData('raww_new');
 
-    if ($p) {  if(strtolower($p) == 'new') {?>
-        <div class="raww-new">
+    if ($p) {
+        if (strtolower($p) == 'new') { ?>
+            <div class="raww-new">
+                <span>
+                    <?php echo $p ?>
+                </span>
+            </div>
+        <?php } elseif (strtolower($p) == 'new shade') { ?>
+            <div class="raww-newshade">
+                <span>
+                    <?php echo $p ?>
+                </span>
+            </div>
+        <?php }
+    } else { ?>
+        <div class="not-rawnew">
             <span>
-                <?php echo $p ?>
+                <?php echo '' ?>
             </span>
         </div>
-    <?php } elseif(strtolower($p) == 'new shade'){ ?>
-        <div class="raww-newshade">
-            <span>
-                <?php echo $p ?>
-            </span>
-        </div>
-    <?php } 
-    }
+    <?php }
     ?>
