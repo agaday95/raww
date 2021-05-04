@@ -7,11 +7,6 @@
 @import 'module/_toolbar.less';
 
 //
-//  Variables
-//  _____________________________________________
-
-
-//
 //  Common
 //  _____________________________________________
 
@@ -23,8 +18,6 @@
         .page-wrapper>.widget {
             margin-top: 12px;
         }
-
-        
     }
 
     .catalog-category-view .header-bottom-tablet .header_content_bottom ul {
@@ -178,7 +171,7 @@
             }
         }
     }
-    // Custom supperfood image hover,active
+    // Banner bottom image hover,active
     .content-img {
         position: relative;
         width: 97px;
@@ -976,14 +969,14 @@
     //  -----------------------------------------
 
     .block.related {
-        max-width: 1240px;
-        margin: 60px auto 0;
+        max-width: 1259px;
+        margin: 60px auto 3px;
         padding: 0;
         width: 100%;
 
         .block-title.title {
             text-align: center;
-            padding: 0 20px;
+            padding: 0 28px;
 
             .related {
                 display: inline-block;
@@ -1026,11 +1019,11 @@
             }
 
             .product.actions.product-item-actions {
-                padding-left: 58px;
+                padding-left: 60px;
                 margin-top: -11px;
 
                 .fieldset>.field.qty {
-                    margin-right: 19px;
+                    margin-right: 20px;
                 }
 
                 .actions-primary {
@@ -1061,9 +1054,9 @@
 
                 .swatch-attribute {
                     .swatch-attribute-options {
-                        margin-bottom: 31px;
                         .lib-vendor-prefix-display(flex);
                         justify-content: center;
+                        padding-left: 10px;
 
                         .swatch-option {
                             margin: 0 2px 5px 0;
@@ -1082,23 +1075,13 @@
             display: none;
         }
 
-        // Remove hover product default luma
-        .products-grid .product-item-info:hover,
-        .products-grid .product-item-info.active {
-            z-index: 0;
-            box-shadow: none;
-            border: none;
-            margin: 0;
-            padding: 0;
-        }
-
         // Slick 
         .products-related .slick-slider {
-            margin-left: -23px;
+            margin-top: -60px;
 
             li.item.product.product-item {
                 width: 100%;
-
+                padding: 0;
                 .product-item-info {
                     width: 100%;
 
@@ -1109,11 +1092,10 @@
             }
 
             .slick-list .slick-track .slick-slide {
-                margin-left: 25px;
+                margin: 0px 10px 0 8px;
 
                 img {
                     width: 100%;
-                    padding-bottom: 5px;
                 }
             }
         }
@@ -1707,7 +1689,7 @@
             position: relative;
             z-index: 1;
             strong.product.name.product-item-name {
-                margin: 7px 0 -2px;
+                margin: 12px 0 -2px;
             }
         }
 
