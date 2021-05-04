@@ -152,9 +152,9 @@ define([
                             leftCorner = 0;
 
                             if ($element.width() < $this.width()) {
-                                leftCorner = $element.width() / 2 - 7.5;
+                                leftCorner = $element.width() / 2 + 3;
                             } else {
-                                leftCorner = (leftOpt > left ? leftOpt - left : left - leftOpt) + $this.width() / 2 - 3;
+                                leftCorner = (leftOpt > left ? leftOpt - left : left - leftOpt) + $this.width() / 2 - 7.5;
                             }
                             console.log(leftCorner);
                             $corner.css({
