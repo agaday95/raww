@@ -1,7 +1,7 @@
     <?php
     $product = $block->getProduct();
-    $p = $product->getData('raww_new');
-
+    $p = $product->getResource()->getAttribute('raww_new');
+    $p = $p->getFrontend()->getValue($product);
     if ($p) {
         if (strtolower($p) == 'new') { ?>
             <div class="raww-new">

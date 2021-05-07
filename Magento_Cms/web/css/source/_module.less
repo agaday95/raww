@@ -154,8 +154,9 @@
             }
         }
     }
-    // End product grid
-    
+
+    //------- end home page product grid  --------
+
     //
     //  Home Page Cms Block
     //  -----------------------------------------
@@ -444,85 +445,6 @@
                 }
             }
         }
-
-    }
-
-    .cms-index-index .page-main {
-        max-width: 100%;
-        padding: 0;
-
-        .home-block.home-block-5 {
-            order: 5;
-
-            .home-block5 {
-                background: @color-white url(../images/backgroundhome5.png) no-repeat center;
-
-                .block.newsletter {
-                    text-align: center;
-                    width: 100%;
-                    max-width: 100%;
-                    margin: auto;
-                    padding: 113px 0;
-
-                    .form.subscribe {
-                        width: 100%;
-                        display: inline-block;
-
-                        h2 {
-                            color: @color-white;
-                            font-size: 30px;
-                            letter-spacing: 0;
-                            margin-top: 10px;
-                            margin-left: -9px;
-                            margin-bottom: 7px;
-                        }
-
-                        .text {
-                            color: @color-white;
-                            max-width: 460px;
-                            font-size: 17px;
-                            letter-spacing: .5px;
-                            margin: 0 auto 27px;
-                            padding-left: 7px;
-                        }
-
-                        .content-bottom {
-                            display: inline-block;
-                            width: 100%;
-                            max-width: 572px;
-
-                            .field.newsletter {
-                                display: inline-block;
-                                float: left;
-                                width: 74%;
-
-                                input {
-                                    padding: 24px 20px;
-                                    margin: 0;
-                                    letter-spacing: 1px;
-                                    border-radius: 3px;
-                                }
-
-                                .control:before {
-                                    display: none;
-                                }
-                            }
-
-                            .actions {
-                                display: inline-block;
-                                float: right;
-                                width: auto;
-
-                                .action.subscribe {
-                                    padding: 16px 35px;
-                                    border-radius: 3px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
 }
 
@@ -561,13 +483,11 @@
                 &.first {
                     width: calc(~"50% - 5px");
                     margin-right: 10px;
-                    padding: 5px;
                 }
 
                 &.second {
                     width: calc(~"50% - 5px");
                     margin-right: 0;
-                    padding: 5px;
                 }
             }
         }
@@ -723,7 +643,7 @@
 
     .home-block.home-block-4 .home-foursixty {
         li {
-            padding: 10px 10px 5px;
+            padding: 10px 5px 5px;
         }
 
         .title {
@@ -731,11 +651,20 @@
 
             p {
                 margin: 0 auto 50px;
+                padding: 0 5px;
             }
         }
     }
 
-    .home-block.home-block-3 .home-page.products-homepage .block-products-list {
-        padding: 0 0 30px;
+    .home-page.products-homepage .block-products-list .products-grid .slick-initialized .slick-track .slick-slide {
+        margin-right: 15px;
+    }
+   
+    .slick-list.draggable {
+        margin-left: -3px;
+    }
+    .block-title {
+        text-align: center;
+        padding: 0 10px;
     }
 }

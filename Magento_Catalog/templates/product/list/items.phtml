@@ -266,7 +266,7 @@ $_item = null;
                                                                         <input type="hidden" name="product" value="<?= /* @noEscape */ (int)$_item->getEntityId() ?>">
                                                                         <input type="hidden" name="<?= /* @noEscape */ ActionInterface::PARAM_NAME_URL_ENCODED ?>" value="<?= /* @noEscape */ $value ?>">
                                                                         <?= $block->getBlockHtml('formkey') ?>
-                                                                        <!-- Addqty product -->
+                                                                        <!-- Input Qty product -->
                                                                         <div class="fieldset">
                                                                             <div class="field qty">
                                                                                 <div class="control">
@@ -327,7 +327,6 @@ $_item = null;
 
                 <?php endif; ?>
             <?php endif; ?>
-
             <script>
                 require([
                     'jquery',
