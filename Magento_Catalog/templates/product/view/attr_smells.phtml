@@ -1,4 +1,19 @@
 <?php
-$product = $block->getProduct();
-echo $product->getData('raww_smells');
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+
+/**
+ * Product view template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Description
+ */
 ?>
+<?php
+$_product = $block->getProduct();
+
+$_raww_smells = $_product->getData('raww_smells'); ?>
+<?= $_raww_smells ?>

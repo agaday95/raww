@@ -1,26 +1,43 @@
-    <?php
-    $product = $block->getProduct();
-    $p = $product->getResource()->getAttribute('raww_new');
-    $p = $p->getFrontend()->getValue($product);
-    if ($p) {
-        if (strtolower($p) == 'new') { ?>
-            <div class="raww-new">
-                <span>
-                    <?php echo $p ?>
-                </span>
-            </div>
-        <?php } elseif (strtolower($p) == 'new shade') { ?>
-            <div class="raww-newshade">
-                <span>
-                    <?php echo $p ?>
-                </span>
-            </div>
-        <?php }
-    } else { ?>
-        <div class="not-rawnew">
+<?php
+
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+
+/**
+ * Product view template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Description
+ */
+?>
+<?php
+$_product = $block->getProduct();
+
+$_attributeLabel = $_product->getResource()->getAttribute('raww_new');
+
+$_attributeLabel = $_attributeLabel->getFrontend()->getValue($_product);
+if ($_attributeLabel) {
+    if (strtolower($_attributeLabel) == 'new') { ?>
+        <div class="raww-new">
             <span>
-                <?php echo '' ?>
+               <?= $_attributeLabel ?>
+            </span>
+        </div>
+    <?php } elseif (strtolower($_attributeLabel) == 'new shade') { ?>
+        <div class="raww-newshade">
+            <span>
+                <? $_attributeLabel ?>
             </span>
         </div>
     <?php }
-    ?>
+} else { ?>
+    <div class="not-rawnew">
+        <span>
+           <?= '' ?>
+        </span>
+    </div>
+<?php }
+?>
