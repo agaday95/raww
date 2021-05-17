@@ -961,7 +961,7 @@
                         .lib-css(margin, 15px 19px);
                         .lib-css(width, 97px);
 
-                        p {
+                        p a{
                             .lib-css(color, @color-white);
                             .lib-css(line-height, 15px);
                             .lib-css(text-transform, uppercase);
@@ -970,9 +970,11 @@
                             .lib-css(margin, 10px auto 0);
                             .lib-css(float, left);
                             .lib-css(padding-left, 10px);
+                            .lib-css(text-decoration, none);
+                            &:hover {
+                                .lib-css(text-decoration, underline);
+                            }
                         }
-
-                      
 
                     }
                 }
