@@ -12,7 +12,11 @@
         <container name="category.view.group.content" htmlTag="div" htmlClass="category-view__group--content" after="-" />
         <referenceBlock name="breadcrumbs" remove="true"/>
         <referenceBlock name="product.info.review" remove="true" />
-
+        <referenceBlock name="product_list_toolbar">
+            <action method="setDefaultGridPerPage">
+                <argument name="limit" xsi:type="string">all</argument>
+            </action>
+        </referenceBlock>
         <move element="category.view.container" destination="page.top" after="-" />
         <move element="category.view.group" destination="category.view.container" before="-" />
         <move element="category.view.group.content" destination="category.view.group"/>

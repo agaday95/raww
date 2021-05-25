@@ -394,10 +394,20 @@
                 }
             }
 
-            // &.filter-current {
-            //     display: inline;
-            //     float: unset;
-            // }
+            .filter-current {
+                .item, .filter-current .items {
+                    .lib-vendor-prefix-display(flex);
+                    .lib-css(flex-wrap, wrap, 1);
+                    .lib-css(align-items, center, 1);
+                    margin: 0 auto 15px;
+                }
+                .action.remove {
+                    line-height: 36px;
+                }
+            }
+            .filter-options-item:last-child {
+                margin-bottom: 0;
+            }
         }
     }
     .catalog-category-view .filter {
@@ -419,10 +429,6 @@
             // position: relative;
             visibility: visible;
             z-index: 99;
-
-            .filter-options-item:last-child {
-                margin-bottom: @indent__xl;
-            }
 
             .filter-title {
                 border-bottom: 1px solid @border-color__base;

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
@@ -17,11 +18,8 @@
     </label>
     <div class="control">
         <select id="limiter" data-role="limiter" class="limiter-options">
-            <?php foreach ($block->getAvailableLimit() as $_key => $_limit) :?>
-                <option value="<?= $block->escapeHtmlAttr($_key) ?>"
-                    <?php if ($block->isLimitCurrent($_key)) :?>
-                        selected="selected"
-                    <?php endif ?>>
+            <?php foreach ($block->getAvailableLimit() as $_key => $_limit) : ?>
+                <option value="<?= $block->escapeHtmlAttr($_key) ?>" <?php if ($block->isLimitCurrent($_key)) : ?> selected="selected" <?php endif ?>>
                     <?= $block->escapeHtml($_limit) ?>
                 </option>
             <?php endforeach; ?>
