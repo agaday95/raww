@@ -188,11 +188,11 @@
                 border: 4px solid white;
                 padding: 0;
                 display: inline-block;
-
+                .lib-css(transition, all 0.4s ease 0s, 1);
                 &.selected,
                 &:not(.disabled):hover {
                     border: none;
-                    .lib-css(transition, all 0.4s ease 0s);
+                    .lib-css(transition, all 0.4s ease 0s, 1);
 
                     &:after {
                         content: '';
@@ -389,9 +389,6 @@
     }
 
     .catalog-category-view {
-
-        .swatch-option.image.selected,
-        .swatch-option.color.selected,
         .swatch-option.image:not(.disabled):hover,
         .swatch-option.color:not(.disabled):hover {
             margin-bottom: 28px;
